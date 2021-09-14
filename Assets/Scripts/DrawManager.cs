@@ -23,6 +23,7 @@ public class DrawManager : MonoBehaviour {
             if(this.planeObj.Raycast(mouseRay, out dist)) {
                 this.startPos = mouseRay.GetPoint(dist);
             }
+            this.trail.layer = 6;
 
         } else if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetMouseButton(0)) {
             
