@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DrawManager : MonoBehaviour {
@@ -5,11 +7,13 @@ public class DrawManager : MonoBehaviour {
     public GameObject trail;
     private Plane planeObj;
     private Vector3 startPos;
-    const int MAX_POSITIONS = 100;
-    public Vector3[] TrailRecorded = new Vector3[MAX_POSITIONS];
+    public Vector3[] TrailRecorded;
+    public List<DrawPoints> drawCollection;
+    public LetterDecorate letter;
 
     private void Start() {
-        this.planeObj = new Plane(Camera.main.transform.forward * -1, this.transform.position);
+        this.drawCollection = new List<DrawPoints>();
+        this.planeObj = new Plane(Camera.main.transform.forward * 1000, this.transform.position);
     }
 
     private void Update() {
@@ -32,7 +36,7 @@ public class DrawManager : MonoBehaviour {
             if (this.planeObj.Raycast(mouseRay, out dist)) {
                 this.trail.transform.position = mouseRay.GetPoint(dist);
             }
-        } else if(Input.GetMouseButtonUp(0))
+        } else if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetMouseButtonUp(0))
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             float dist;
@@ -41,8 +45,13 @@ public class DrawManager : MonoBehaviour {
             {
                 this.trail.transform.position = mouseRay.GetPoint(dist);
                 this.trail.GetComponent<TrailRenderer>().emitting = false;
-                int numberOfPositions = this.trail.GetComponent<TrailRenderer>().GetPositions(TrailRecorded);
-                Debug.Log(numberOfPositions);
+                this.TrailRecorded = new Vector3[this.trail.GetComponent<TrailRenderer>().positionCount];
+                int numberOfPositions = this.trail.GetComponent<TrailRenderer>().GetPositions(this.TrailRecorded);
+                
+                //Debug.Log(numberOfPositions);
+                this.drawCollection.Add(this.trail.GetComponent<DrawPoints>() as DrawPoints);
+                this.trail.GetComponent<DrawPoints>().AddPoints(this.TrailRecorded, letter);
+
             }
 
         }
