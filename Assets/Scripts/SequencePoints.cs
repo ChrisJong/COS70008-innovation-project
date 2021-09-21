@@ -21,7 +21,7 @@ public class SequencePoints : MonoBehaviour {
 
             foreach(Vector3 drawpoint in drawpoints) {
                 float distance = point.Distance(new Vector2(drawpoint.x, drawpoint.y));
-                Debug.Log("Distance of " + point.gameObject.name + ": " + distance);
+                //Debug.Log("Distance of " + point.gameObject.name + ": " + distance);
                 if (distance > padding) {
                     point.complete = false;
                     continue;
