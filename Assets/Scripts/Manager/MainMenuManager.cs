@@ -14,6 +14,8 @@ namespace Manager {
         [SerializeField] private GameObject menu;
         [SerializeField] private GameObject verify;
         [SerializeField] private GameObject selection;
+        [SerializeField] private GameObject letters;
+        [SerializeField] private GameObject numbers;
         [SerializeField] private GameObject drawManager;
 
         [SerializeField] private InputField nameInputField;
@@ -37,6 +39,8 @@ namespace Manager {
         }
 
         public void ShowMenu() {
+            this.drawManager.GetComponent<DrawManager>().ClearLines();
+
             this.menu.SetActive(true);
             this.verify.SetActive(false);
             this.selection.SetActive(false);
@@ -56,11 +60,36 @@ namespace Manager {
             this.menu.SetActive(false);
             this.verify.SetActive(false);
             this.selection.SetActive(true);
+            this.letters.SetActive(false);
+            this.numbers.SetActive(false);
+            this.drawManager.SetActive(false);
+        }
+
+        public void ShowLetters() {
+            this.menu.SetActive(false);
+            this.verify.SetActive(false);
+            this.selection.SetActive(false);
+            this.letters.SetActive(true);
+            this.numbers.SetActive(false);
+            this.drawManager.SetActive(false);
+        }
+
+        public void ShowNumbers() {
+            this.menu.SetActive(false);
+            this.verify.SetActive(false);
+            this.selection.SetActive(false);
+            this.letters.SetActive(false);
+            this.numbers.SetActive(true);
             this.drawManager.SetActive(false);
         }
 
         public void CheckSelection(string type) {
             GlobalManager.instance.ChangeScene(type);
+        }
+
+        public void ChangeScene(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

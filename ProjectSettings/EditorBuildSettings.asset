@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8636759a355522e4997d4123d923f4fb
   - enabled: 1
-    path: Assets/Scenes/Activities/CompleteWord.unity
-    guid: 63ee193c06654894586a2ff7f63c6518
-  - enabled: 1
-    path: Assets/Scenes/Activities/DecorateWord.unity
-    guid: cf6e2ec3c3923e14fba6f8fb62b082c8
-  - enabled: 1
-    path: Assets/Scenes/Activities/MatchWord.unity
-    guid: e2decfd9a0ff16c4b93aa460edc27ee0
+    path: Assets/Scenes/Letters/Decorate_A.unity
+    guid: a138ae609b5ebd748bb181dc8a49cc5f
   m_configObjects: {}
