@@ -14,6 +14,7 @@ namespace Manager {
         [SerializeField] private GameObject menu;
         [SerializeField] private GameObject verify;
         [SerializeField] private GameObject selection;
+        [SerializeField] private GameObject drawManager;
 
         [SerializeField] private InputField nameInputField;
         [SerializeField] private Text verifyNameInputField;
@@ -39,18 +40,23 @@ namespace Manager {
             this.menu.SetActive(true);
             this.verify.SetActive(false);
             this.selection.SetActive(false);
+            this.drawManager.SetActive(false);
         }
 
         public void ShowVerify() {
             this.menu.SetActive(false);
             this.verify.SetActive(true);
             this.selection.SetActive(false);
+            this.drawManager.SetActive(true);
         }
 
         public void ShowSelection() {
+            this.drawManager.GetComponent<DrawManager>().ClearLines();
+            
             this.menu.SetActive(false);
             this.verify.SetActive(false);
             this.selection.SetActive(true);
+            this.drawManager.SetActive(false);
         }
 
         public void CheckSelection(string type) {

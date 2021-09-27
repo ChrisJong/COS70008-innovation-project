@@ -19,10 +19,16 @@ public class DrawPoints : MonoBehaviour {
             this.endPoint = points[points.Length-1];
         }
 
-        letter.CheckSequence(this);
+        if(letter != null)
+            letter.CheckSequence(this);
         
         return true;
 
 
+    }
+
+    public bool DestoryLine() {
+        Destroy(this.gameObject);
+        return true;
     }
 }

@@ -21,13 +21,14 @@ namespace Manager {
 
         public void ChangeScene(string type) {
             Debug.Log(type);
+            this.currentType = type;
 
             if(type == "letters" && this.letters.Count != 0) {
                 int activity = Random.Range(0, this.letters.Count);
 
                 Debug.Log("Letter Activity:" + this.letters[activity]);
                 DontDestroyOnLoad(this.gameObject);
-                SceneManager.LoadScene(this.letters[activity]);
+                SceneManager.LoadScene(this.letters[activity]); 
 
             } else if(type == "numbers") {
                 int activity = Random.Range(0, this.numbers.Count);
