@@ -9,7 +9,6 @@ public class DrawManager : MonoBehaviour {
     public GameObject trail;
     private Plane planeObj;
     private Vector3 startPos;
-    public Vector3[] TrailRecorded;
     public List<DrawPoints> drawCollection;
     public LetterDecorate letter;
 
@@ -84,12 +83,12 @@ public class DrawManager : MonoBehaviour {
                 {
                     this.trail.transform.position = mouseRay.GetPoint(dist);
                     this.trail.GetComponent<TrailRenderer>().emitting = false;
-                    this.TrailRecorded = new Vector3[this.trail.GetComponent<TrailRenderer>().positionCount];
-                    int numberOfPositions = this.trail.GetComponent<TrailRenderer>().GetPositions(this.TrailRecorded);
+                    Vector3[] TrailRecorded = new Vector3[this.trail.GetComponent<TrailRenderer>().positionCount];
+                    int numberOfPositions = this.trail.GetComponent<TrailRenderer>().GetPositions(TrailRecorded);
 
                     //Debug.Log(numberOfPositions);
                     this.drawCollection.Add(this.trail.GetComponent<DrawPoints>() as DrawPoints);
-                    this.trail.GetComponent<DrawPoints>().AddPoints(this.TrailRecorded, letter);
+                    this.trail.GetComponent<DrawPoints>().AddPoints(TrailRecorded, letter);
                     this.trail = null;
                 }
             }
