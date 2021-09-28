@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8152916744890641916}
   - component: {fileID: 1976965559293506741}
   - component: {fileID: 4856607080923392921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Draw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,4 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
-  pointList: []
+  points: []
