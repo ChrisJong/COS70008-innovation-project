@@ -32,6 +32,14 @@ public class DrawManager : MonoBehaviour {
         this.drawCollection.Clear();
     }
 
+    public void SetColour(string hexadecimal)
+    {
+        Color color;
+        ColorUtility.TryParseHtmlString(hexadecimal, out color);
+        drawPrefab.GetComponent<TrailRenderer>().startColor = color;
+        drawPrefab.GetComponent<TrailRenderer>().endColor = color;
+    }
+
     private bool IsOnAButton() {
         if (EventSystem.current.IsPointerOverGameObject()) {
 
