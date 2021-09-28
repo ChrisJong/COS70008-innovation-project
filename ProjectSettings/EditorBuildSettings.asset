@@ -15,9 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Selection.unity
     guid: 9633f73f403fbed439fea0233d34611c
   - enabled: 1
-    path: Assets/Scenes/Letters/Decorate_A.unity
+    path: Assets/Scenes/Letters/A_Decorate.unity
     guid: a138ae609b5ebd748bb181dc8a49cc5f
   - enabled: 1
-    path: Assets/Scenes/Letters/MatchWord_B.unity
+    path: Assets/Scenes/Letters/B_CompleteWord.unity
     guid: b5b64e5baf9f2274e875f3efea4349fe
+  - enabled: 1
+    path: Assets/Scenes/Letters/C_CompleteWrite.unity
+    guid: 62af28b9e67b58740957413b7a4b6567
+  - enabled: 1
+    path: Assets/Scenes/Letters/D_BarnDrop.unity
+    guid: 735d3d26296626c4b956a203350f151e
+  - enabled: 1
+    path: Assets/Scenes/Letters/E_Musiceli.unity
+    guid: 25651609fa49e4643ad96f0f5850a674
   m_configObjects: {}

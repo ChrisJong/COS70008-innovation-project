@@ -9,15 +9,15 @@ public class Decorate : MonoBehaviour
 
     private float _padding = 0.3f;
 
-    [SerializeField] private GameObject _decorate;
-    [SerializeField] private GameObject _board;
+    [SerializeField] private GameObject _decorateComplete;
+    [SerializeField] private GameObject _decorateOutline;
 
     [SerializeField] private List<SequencePoint> _points;
 
     private void Awake()
     {
-        if (this._decorate != null)
-            this._decorate.SetActive(false);
+        if (this._decorateComplete != null)
+            this._decorateComplete.SetActive(false);
     }
 
     public void Check(DrawPoints drawpoints)
@@ -60,15 +60,15 @@ public class Decorate : MonoBehaviour
         if (temp == this._points.Count)
         {
             this.finished = true;
-            this._decorate.SetActive(true);
-            this._board.SetActive(false);
+            this._decorateComplete.SetActive(true);
+            this._decorateOutline.SetActive(false);
             return true;
         }
         else
         {
             this.finished = false;
-            this._decorate.SetActive(false);
-            this._board.SetActive(true);
+            this._decorateComplete.SetActive(false);
+            this._decorateOutline.SetActive(true);
             return false;
         }
     }
