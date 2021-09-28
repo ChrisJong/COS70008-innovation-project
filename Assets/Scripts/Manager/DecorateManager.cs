@@ -12,10 +12,6 @@ namespace Manager {
         [SerializeField] private DrawManager _drawManager;
         [SerializeField] private Decorate _decorate;
 
-        public override void Init() {
-            throw new System.NotImplementedException();
-        }
-
         public void Check(List<DrawPoints> drawCollection)
         {
             foreach(DrawPoints drawpoint in drawCollection)
@@ -27,6 +23,11 @@ namespace Manager {
             {
                 this._drawManager.ClearLines();
             }
+        }
+
+        public void BackToSelection()
+        {
+            GlobalManager.instance.ChangeScene("selection");
         }
     }
 }
