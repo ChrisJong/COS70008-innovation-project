@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Letters/Decorate_A.unity
     guid: a138ae609b5ebd748bb181dc8a49cc5f
+  - enabled: 1
+    path: Assets/Scenes/Letters/MatchWord_B.unity
+    guid: b5b64e5baf9f2274e875f3efea4349fe
   m_configObjects: {}

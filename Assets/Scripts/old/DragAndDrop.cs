@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
 	
 	private RectTransform recTrans;
-	private CanvasGroup myCanvasGroup;
+	public CanvasGroup myCanvasGroup;
 	public Canvas myCanvas;
 	
 	public enum letter {
