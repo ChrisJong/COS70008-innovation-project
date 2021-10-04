@@ -1,5 +1,5 @@
-namespace Manager {
-
+namespace Manager
+{
     using System.Collections;
     using System.Collections.Generic;
 
@@ -8,21 +8,24 @@ namespace Manager {
 
     using Extension;
 
-    public class DecorateManager : SingletonMono<DecorateManager> 
+    public class CompleteWritingManager : SingletonMono<CompleteWritingManager>
     {
         [SerializeField] private bool _completed = false;
 
         [SerializeField] private Image _letterImage;
-
+        [SerializeField] private Image _pictureImage;
+        
         [Space(10), Header("Editable")]
         [SerializeField] private Sprite _letterOutlineSprite;
-        [SerializeField] private Sprite _letterCompleteSprite;
+        [SerializeField] private Sprite _pictureOutlineSprite;
+        [SerializeField] private Sprite _pictureCompleteSprite;
 
         [SerializeField] private List<SequencePoint> _sequencePoints;
 
         public void Start()
         {
             this._letterImage.sprite = this._letterOutlineSprite;
+            this._pictureImage.sprite = this._pictureOutlineSprite;
         }
 
         public void Check()
@@ -30,29 +33,18 @@ namespace Manager {
             if (this._sequencePoints.Count == 0 || this._sequencePoints == null)
                 return;
 
-            foreach (SequencePoint seqPoint in this._sequencePoints)
+            foreach(SequencePoint seqPoint in this._sequencePoints)
             {
                 if (!seqPoint.complete)
                     return;
             }
 
-            if (this._letterImage != null)
+            if (this._pictureImage != null)
             {
-                this._letterImage.sprite = this._letterCompleteSprite;
-            }
-
-            if (DrawingManager.instance != null)
-            {
-                DrawingManager.instance.CanDraw = false;
-                DrawingManager.instance.ClearLines();
+                this._pictureImage.sprite = this._pictureCompleteSprite;
             }
 
             this._completed = true;
-        }
-
-        public void BackToSelection()
-        {
-            GlobalManager.instance.ChangeScene("selection");
         }
     }
 }

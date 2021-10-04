@@ -123,11 +123,6 @@ public class DrawManager : MonoBehaviour {
                     this.drawCollection.Add(this.trail.GetComponent<DrawPoints>() as DrawPoints);
                     this.trail.GetComponent<DrawPoints>().AddPoints(TrailRecorded);
                     this.trail = null;
-
-                    if(DecorateManager.instance != null)
-                    {
-                        DecorateManager.instance.Check(this.drawCollection);
-                    }
                 }
             }
         }
