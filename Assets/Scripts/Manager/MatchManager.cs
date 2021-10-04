@@ -10,8 +10,9 @@ namespace Manager
 
     public class MatchManager : SingletonMono<MatchManager>
     {
-        public List<MatchSlotHandler> slots;
         public int completedCount = 0;
+
+        public List<MatchSlotHandler> slots;
 
         public GameObject boardOutline;
         public GameObject boardCompleted;

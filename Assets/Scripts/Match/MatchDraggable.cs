@@ -5,11 +5,15 @@ using Manager;
 
 public class MatchDraggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
+    public bool draggable = true;
+
+    public Vector3 previousPosition = Vector3.zero;
+
     public string myLetter;
 
-    private RectTransform rectTransform;
+    [SerializeField] private RectTransform rectTransform;
     
-    private CanvasGroup canvasGroup;
+    [SerializeField] private CanvasGroup canvasGroup;
 
     private void Awake()
     {
@@ -19,12 +23,26 @@ public class MatchDraggable : MonoBehaviour, IPointerDownHandler, IBeginDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!this.draggable)
+            return;
+
+        this.previousPosition = this.rectTransform.anchoredPosition3D;
         this.canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        this.rectTransform.anchoredPosition += eventData.delta / MatchManager.instance.mainCanvas.scaleFactor;
+        if (!this.draggable)
+            return;
+
+        if (MatchManager.instance != null)
+            this.rectTransform.anchoredPosition += eventData.delta / MatchManager.instance.mainCanvas.scaleFactor;
+        else
+        {
+            Vector3 temp = Camera.main.ScreenToWorldPoint(eventData.position);
+            temp.z = 0.0f;
+            transform.position = temp;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -35,5 +53,10 @@ public class MatchDraggable : MonoBehaviour, IPointerDownHandler, IBeginDragHand
     public void OnPointerDown(PointerEventData eventData)
     {
         Debug.Log("Down");
+    }
+
+    public void MoveBack()
+    {
+        this.rectTransform.anchoredPosition3D = this.previousPosition;
     }
 }
