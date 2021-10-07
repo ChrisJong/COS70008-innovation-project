@@ -20,6 +20,9 @@ namespace Manager
         [SerializeField] private Sprite _pictureOutlineSprite;
         [SerializeField] private Sprite _pictureCompleteSprite;
 
+        public Text textField;
+        public string completedText;
+
         [SerializeField] private List<SequencePoint> _sequencePoints;
 
         public void Start()
@@ -44,6 +47,10 @@ namespace Manager
                 this._pictureImage.sprite = this._pictureCompleteSprite;
             }
 
+            if(textField != null && completedText != null)
+            {
+                textField.text = completedText;
+            }
             this._completed = true;
         }
     }
