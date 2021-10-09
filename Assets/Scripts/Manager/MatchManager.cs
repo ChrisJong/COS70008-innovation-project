@@ -12,7 +12,7 @@ namespace Manager
     {
         public int completedCount = 0;
 
-        public List<MatchSlotHandler> slots;
+        public List<SlotHandler> slots;
 
         public GameObject boardOutline;
         public GameObject boardCompleted;
@@ -25,6 +25,19 @@ namespace Manager
             {
                 this.boardOutline.SetActive(false);
                 this.boardCompleted.SetActive(true);
+            } 
+            else
+            {
+                foreach(SlotHandler slot in this.slots)
+                {
+                    if (!slot.completed)
+                        return;
+                    else
+                    {
+                        this.boardOutline.SetActive(false);
+                        this.boardCompleted.SetActive(true);
+                    }
+                }
             }
         }
 

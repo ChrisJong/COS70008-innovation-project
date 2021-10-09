@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 using Manager;
 
-public class MatchDraggable : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class SlotToken : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     public bool draggable = true;
 
@@ -11,9 +11,9 @@ public class MatchDraggable : MonoBehaviour, IPointerDownHandler, IBeginDragHand
 
     public string myLetter;
 
-    [SerializeField] private RectTransform rectTransform;
+    private RectTransform rectTransform;
     
-    [SerializeField] private CanvasGroup canvasGroup;
+    private CanvasGroup canvasGroup;
 
     private void Awake()
     {
@@ -52,6 +52,9 @@ public class MatchDraggable : MonoBehaviour, IPointerDownHandler, IBeginDragHand
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (!this.draggable)
+            return;
+
         Debug.Log("Down");
     }
 
