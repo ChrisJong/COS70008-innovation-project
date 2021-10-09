@@ -1,5 +1,6 @@
 namespace Manager
 {
+    using System;
     using System.Collections;
     using UnityEngine;
     using UnityEngine.UI;
@@ -19,6 +20,8 @@ namespace Manager
         private Texture2D ScreenshotTexture; // The screenshot text which is input to Tesseract recognise
         public Texture2D HighlightedTexture;
         private RenderTexture RenderTexture;
+
+        public AudioClip SuccessAudioClip;
 
         private void Start()
         {
@@ -76,7 +79,17 @@ namespace Manager
                 return;
             };
             _text = _tesseractDriver.Recognize(ScreenshotTexture);
+            _text = _text.Replace(" ", "");
             HighlightedTexture = _tesseractDriver.GetHighlightedTexture();
+
+            Debug.Log("Childname: " + childName);
+            Debug.Log("_text: " + _text);
+
+            if(childName.ToLower() == _text.ToLower())
+            {
+                Debug.Log("Playing sound effect using audio manager");
+                AudioManager.Instance.PlaySoundEffect(SuccessAudioClip);
+            }
         }
 
         private void takeScreenshotAndRecognise()
