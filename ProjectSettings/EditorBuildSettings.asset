@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Letters/C_CompleteWrite.unity
     guid: 62af28b9e67b58740957413b7a4b6567
   - enabled: 1
-    path: Assets/Scenes/Letters/D_MatchingLetter.unity
+    path: Assets/Scenes/Letters/D_DraggingLetter.unity
     guid: 735d3d26296626c4b956a203350f151e
   - enabled: 1
     path: Assets/Scenes/Letters/E_Musiceli.unity
