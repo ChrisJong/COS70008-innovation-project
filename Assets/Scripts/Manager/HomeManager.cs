@@ -26,5 +26,10 @@ namespace Manager
 
             GlobalManager.instance.ChangeScene("verify");
         }
+
+        private void Start()
+        {
+            AudioManager.Instance.PlayMusic();
+        }
     }
 }
