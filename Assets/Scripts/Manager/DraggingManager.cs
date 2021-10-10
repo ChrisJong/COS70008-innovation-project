@@ -65,7 +65,7 @@ namespace Manager
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
-                AudioManager.Instance.PlaySoundEffect(SuccessAudioClip);
+                AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
             }
 
         }

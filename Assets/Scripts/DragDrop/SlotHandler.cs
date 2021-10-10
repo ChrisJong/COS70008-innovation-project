@@ -12,6 +12,8 @@ public class SlotHandler : MonoBehaviour, IDropHandler
 
 	public bool completed = false;
 
+	public GameObject token = null;
+
 	public void OnDrop(PointerEventData eventData)
 	{
 		if (this.completed)
@@ -31,8 +33,9 @@ public class SlotHandler : MonoBehaviour, IDropHandler
 				this._currentCount++;
 				if(this._currentCount == this.lookingCount)
 					this.completed = true;
-				
-				eventData.pointerDrag.GetComponent<SlotToken>().draggable = false;
+
+				this.token = eventData.pointerDrag;
+				this.token.GetComponent<SlotToken>().draggable = false;
 
 				if (MatchManager.instance != null)
 				{
@@ -42,6 +45,11 @@ public class SlotHandler : MonoBehaviour, IDropHandler
 				else if(DraggingManager.instance != null)
                 {
 					DraggingManager.instance.CheckMatches();
+                } 
+				else if(PuzzleManager.instance != null)
+                {
+					this.HideSlotAndToken();
+					PuzzleManager.instance.CheckMatches();
                 }
             } 
 			else
@@ -51,4 +59,12 @@ public class SlotHandler : MonoBehaviour, IDropHandler
 			}
 		}
 	}
+
+	private void HideSlotAndToken()
+    {
+		if (this.token != null)
+			this.token.SetActive(false);
+
+		this.gameObject.SetActive(false);
+    }
 }

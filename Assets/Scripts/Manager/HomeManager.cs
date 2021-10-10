@@ -29,7 +29,7 @@ namespace Manager
 
         private void Start()
         {
-            AudioManager.Instance.PlayMusic();
+            AudioManager.instance.PlayMusic();
         }
     }
 }

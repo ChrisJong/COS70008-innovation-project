@@ -700,7 +700,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 792397094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a293de6dfda042c48bf6d29a43598f1e, type: 3}
+  m_Script: {fileID: 11500000, guid: ca67135edc47242bcae13239167cd58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slots:
@@ -710,6 +710,7 @@ MonoBehaviour:
   - {fileID: 664453341}
   - {fileID: 1703897778}
   completed: 0
+  SuccessAudioClip: {fileID: 0}
 --- !u!1 &990608900
 GameObject:
   m_ObjectHideFlags: 0

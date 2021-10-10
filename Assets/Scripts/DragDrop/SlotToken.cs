@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 using Manager;
 
-public class SlotToken : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     public bool draggable = true;
 
@@ -48,14 +48,19 @@ public class SlotToken : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         this.canvasGroup.blocksRaycasts = true;
+
+        if (PuzzleManager.instance != null)
+        {
+            if (eventData.pointerDrag.GetComponent<SlotHandler>() == null)
+                this.MoveBack();
+            else
+                Debug.Log("Something");
+        }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData)
     {
-        if (!this.draggable)
-            return;
-
-        Debug.Log("Down");
+        eventData.pointerDrag.GetComponent<SlotToken>().MoveBack();
     }
 
     public void MoveBack()
