@@ -83,14 +83,13 @@ public class DrawManager : MonoBehaviour {
                     this.trail = (GameObject)Instantiate(this.drawPrefab, this.transform.position, Quaternion.identity);
                 }*/
 
-                this.trail = (GameObject)Instantiate(this.drawPrefab, this.transform.position, Quaternion.identity);
-
                 Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                 float dist;
 
                 if(this.planeObj.Raycast(mouseRay, out dist)) {
                     this.startPos = mouseRay.GetPoint(dist);
                 }
+                this.trail = (GameObject)Instantiate(this.drawPrefab, mouseRay.GetPoint(dist), Quaternion.identity);
             }
         } else if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved || Input.GetMouseButton(0)) {
 
