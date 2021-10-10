@@ -19,16 +19,17 @@ namespace Manager
 
         public Canvas mainCanvas;
 
+        public AudioClip SuccessAudioClip;
+
         public void CheckMatches()
         {
-            if(this.completedCount == this.slots.Count)
+            if (this.completedCount == this.slots.Count)
             {
-                this.boardOutline.SetActive(false);
-                this.boardCompleted.SetActive(true);
-            } 
+                onActivityComplete();
+            }
             else
             {
-                foreach(SlotHandler slot in this.slots)
+                foreach (SlotHandler slot in this.slots)
                 {
                     if (!slot.completed)
                         return;
@@ -44,6 +45,23 @@ namespace Manager
         public void BackToSelection()
         {
             GlobalManager.instance.ChangeScene("selection");
+        }
+
+        public void MoveToNextScene(string sceneName)
+        {
+            GlobalManager.instance.ChangeScene(sceneName);
+        }
+
+        private void onActivityComplete()
+        {
+            this.boardOutline.SetActive(false);
+            this.boardCompleted.SetActive(true);
+            if (SuccessAudioClip != null)
+            {
+                Debug.Log("Playing sound effect using audio manager");
+                AudioManager.Instance.PlaySoundEffect(SuccessAudioClip);
+            }
+
         }
     }
 }

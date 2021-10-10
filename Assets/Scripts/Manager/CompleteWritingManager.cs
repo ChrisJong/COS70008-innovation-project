@@ -14,7 +14,7 @@ namespace Manager
 
         [SerializeField] private Image _letterImage;
         [SerializeField] private Image _pictureImage;
-        
+
         [Space(10), Header("Editable")]
         [SerializeField] private Sprite _letterOutlineSprite;
         [SerializeField] private Sprite _pictureOutlineSprite;
@@ -24,6 +24,8 @@ namespace Manager
         public string completedText;
 
         [SerializeField] private List<SequencePoint> _sequencePoints;
+
+        public AudioClip SuccessAudioClip;
 
         public void Start()
         {
@@ -36,7 +38,7 @@ namespace Manager
             if (this._sequencePoints.Count == 0 || this._sequencePoints == null)
                 return;
 
-            foreach(SequencePoint seqPoint in this._sequencePoints)
+            foreach (SequencePoint seqPoint in this._sequencePoints)
             {
                 if (!seqPoint.complete)
                     return;
@@ -47,11 +49,26 @@ namespace Manager
                 this._pictureImage.sprite = this._pictureCompleteSprite;
             }
 
-            if(textField != null && completedText != null)
+            if (textField != null && completedText != null)
             {
                 textField.text = completedText;
             }
+            onActivityComplete();
+        }
+
+        public void MoveToNextScene(string sceneName)
+        {
+            GlobalManager.instance.ChangeScene(sceneName);
+        }
+
+        private void onActivityComplete()
+        {
             this._completed = true;
+            if (SuccessAudioClip != null)
+            {
+                Debug.Log("Playing sound effect using audio manager");
+                AudioManager.Instance.PlaySoundEffect(SuccessAudioClip);
+            }
         }
     }
 }

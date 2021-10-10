@@ -1,4 +1,5 @@
-namespace Manager {
+namespace Manager
+{
 
     using System.Collections;
     using System.Collections.Generic;
@@ -8,7 +9,7 @@ namespace Manager {
 
     using Extension;
 
-    public class DecorateManager : SingletonMono<DecorateManager> 
+    public class DecorateManager : SingletonMono<DecorateManager>
     {
         [SerializeField] private bool _completed = false;
 
@@ -19,6 +20,8 @@ namespace Manager {
         [SerializeField] private Sprite _letterCompleteSprite;
 
         [SerializeField] private List<SequencePoint> _sequencePoints;
+
+        public AudioClip SuccessAudioClip;
 
         public void Start()
         {
@@ -47,12 +50,28 @@ namespace Manager {
                 DrawingManager.instance.ClearLines();
             }
 
-            this._completed = true;
+            onActivityComplete();
         }
 
         public void BackToSelection()
         {
             GlobalManager.instance.ChangeScene("selection");
+        }
+
+        public void MoveToNextScene(string sceneName)
+        {
+            GlobalManager.instance.ChangeScene(sceneName);
+        }
+
+        private void onActivityComplete()
+        {
+            this._completed = true;
+            if (SuccessAudioClip != null)
+            {
+                Debug.Log("Playing sound effect using audio manager");
+                AudioManager.Instance.PlaySoundEffect(SuccessAudioClip);
+            }
+
         }
     }
 }

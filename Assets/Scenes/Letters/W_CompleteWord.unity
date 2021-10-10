@@ -172,6 +172,7 @@ MonoBehaviour:
   boardOutline: {fileID: 1438960925}
   boardCompleted: {fileID: 618029246}
   mainCanvas: {fileID: 589420876}
+  SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
 --- !u!1 &361537973
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +184,7 @@ GameObject:
   - component: {fileID: 361537974}
   - component: {fileID: 361537976}
   - component: {fileID: 361537975}
+  - component: {fileID: 361537977}
   m_Layer: 5
   m_Name: background_image
   m_TagString: Untagged
@@ -207,7 +209,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2160, y: 1080}
+  m_SizeDelta: {x: 2160, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &361537975
 MonoBehaviour:
@@ -247,6 +249,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361537973}
   m_CullTransparentMesh: 1
+--- !u!114 &361537977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361537973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 1
+  m_AspectRatio: 1
 --- !u!1 &386011704
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,12 +483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 2
-  m_MatchWidthOrHeight: 1
+  m_ReferenceResolution: {x: 2160, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -738,6 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookingFor: W
+  lookingCount: 1
   completed: 0
 --- !u!1 &1089680133
 GameObject:
@@ -820,7 +837,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1089680136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 306453211}
+        m_TargetAssemblyTypeName: Manager.MatchManager, Assembly-CSharp
+        m_MethodName: MoveToNextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: X_Decorate
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1089680136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,7 +870,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46ccd07bf9ea2694196fca2e0b6563e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b137f873aa522d54789ff53fbf2f3741, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -963,8 +992,6 @@ MonoBehaviour:
   draggable: 1
   previousPosition: {x: 0, y: 0, z: 0}
   myLetter: W
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
 --- !u!1 &1144792165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,8 +1210,6 @@ MonoBehaviour:
   draggable: 1
   previousPosition: {x: 0, y: 0, z: 0}
   myLetter: U
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
 --- !u!1 &1438960925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,8 +1428,6 @@ MonoBehaviour:
   draggable: 1
   previousPosition: {x: 0, y: 0, z: 0}
   myLetter: M
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
 --- !u!1 &1555023389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,8 +1573,6 @@ MonoBehaviour:
   draggable: 1
   previousPosition: {x: 0, y: 0, z: 0}
   myLetter: C
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
 --- !u!1 &1658768680
 GameObject:
   m_ObjectHideFlags: 0

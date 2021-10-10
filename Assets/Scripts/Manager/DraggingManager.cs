@@ -1,4 +1,5 @@
-namespace Manager {
+namespace Manager
+{
 
     using System.Collections;
     using System.Collections.Generic;
@@ -15,9 +16,12 @@ namespace Manager {
 
         public bool completed = false;
 
+        public AudioClip SuccessAudioClip;
+
         public void CheckMatches()
         {
-            if (this.slots.Count >= 0) {
+            if (this.slots.Count >= 0)
+            {
 
                 foreach (SlotHandler slot in this.slots)
                 {
@@ -25,10 +29,8 @@ namespace Manager {
                         return;
                 }
 
-                Debug.Log("Completed");
-                this.completed = true;
-                ToggleDraggable(false);
-            } 
+                onActivityComplete();
+            }
             else
             {
                 Debug.LogWarning("No Slots Found!");
@@ -37,8 +39,8 @@ namespace Manager {
 
         public void BackToSelection()
         {
-                if (GlobalManager.instance != null)
-                    GlobalManager.instance.ChangeScene("selection");
+            if (GlobalManager.instance != null)
+                GlobalManager.instance.ChangeScene("selection");
         }
 
         private void ToggleDraggable(bool canDrag)
@@ -48,6 +50,24 @@ namespace Manager {
                 foreach (SlotToken token in this.tokens)
                     token.draggable = canDrag;
             }
+        }
+
+        public void MoveToNextScene(string sceneName)
+        {
+            GlobalManager.instance.ChangeScene(sceneName);
+        }
+
+        private void onActivityComplete()
+        {
+            Debug.Log("Completed");
+            this.completed = true;
+            ToggleDraggable(false);
+            if (SuccessAudioClip != null)
+            {
+                Debug.Log("Playing sound effect using audio manager");
+                AudioManager.Instance.PlaySoundEffect(SuccessAudioClip);
+            }
+
         }
     }
 }

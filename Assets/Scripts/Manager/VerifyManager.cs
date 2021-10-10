@@ -85,7 +85,18 @@ namespace Manager
             Debug.Log("Childname: " + childName);
             Debug.Log("_text: " + _text);
 
-            if(childName.ToLower() == _text.ToLower())
+            if (childName.ToLower() == _text.ToLower())
+            {
+                onActivityComplete();
+
+            }
+            GlobalManager.instance.ChangeScene("selection");
+
+        }
+
+        private void onActivityComplete()
+        {
+            if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
                 AudioManager.Instance.PlaySoundEffect(SuccessAudioClip);
