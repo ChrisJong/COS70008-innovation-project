@@ -54,6 +54,7 @@ namespace Manager
             //this.GetComponent<Camera2Screenshot>().takeScreenshot();
             //GlobalManager.instance.ChangeScene("selection");
             takeScreenshotAndRecognise();
+            GlobalManager.instance.ChangeScene("selection");
         }
 
         public void BackHome()
@@ -90,8 +91,6 @@ namespace Manager
                 onActivityComplete();
 
             }
-            GlobalManager.instance.ChangeScene("selection");
-
         }
 
         private void onActivityComplete()
