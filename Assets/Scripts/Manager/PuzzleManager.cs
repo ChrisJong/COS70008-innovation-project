@@ -7,6 +7,7 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
+    using Utlis;
 
     public class PuzzleManager : SingletonMono<PuzzleManager>
     {
@@ -38,6 +39,11 @@ namespace Manager
 
                 onActivityComplete();
             }
+        }
+
+        public void LoadScene(string sceneName)
+        {
+            Utility.ChangeScene(sceneName);
         }
 
         private void onActivityComplete()

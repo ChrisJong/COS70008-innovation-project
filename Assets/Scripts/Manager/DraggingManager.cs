@@ -7,6 +7,7 @@ namespace Manager
     using UnityEngine;
 
     using Extension;
+    using Utlis;
 
     public class DraggingManager : SingletonMono<DraggingManager>
     {
@@ -37,12 +38,6 @@ namespace Manager
             }
         }
 
-        public void BackToSelection()
-        {
-            if (GlobalManager.instance != null)
-                GlobalManager.instance.ChangeScene("selection");
-        }
-
         private void ToggleDraggable(bool canDrag)
         {
             if (this.tokens.Count >= 0)
@@ -54,7 +49,7 @@ namespace Manager
 
         public void MoveToNextScene(string sceneName)
         {
-            GlobalManager.instance.ChangeScene(sceneName);
+            Utility.ChangeScene(sceneName);
         }
 
         private void onActivityComplete()

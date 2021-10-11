@@ -7,6 +7,7 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
+    using Utlis;
 
     public class CompleteWritingManager : SingletonMono<CompleteWritingManager>
     {
@@ -69,7 +70,7 @@ namespace Manager
 
         public void MoveToNextScene(string sceneName)
         {
-            GlobalManager.instance.ChangeScene(sceneName);
+            Utility.ChangeScene(sceneName);
         }
 
         private void onActivityComplete()

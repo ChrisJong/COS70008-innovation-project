@@ -15,60 +15,63 @@ EditorBuildSettings:
     path: Assets/Scenes/Selection.unity
     guid: 9633f73f403fbed439fea0233d34611c
   - enabled: 1
-    path: Assets/Scenes/Letters/Z_CompleteWrite.unity
-    guid: 0c63ea19d4d1a43b591d8b061163dd14
-  - enabled: 1
-    path: Assets/Scenes/Letters/Y_Decorate.unity
-    guid: e8f10a420c29a494f8113a7cec19a388
-  - enabled: 1
-    path: Assets/Scenes/Letters/X_Decorate.unity
-    guid: bd451b1fe7f6c470a99008f26b39b0eb
-  - enabled: 1
-    path: Assets/Scenes/Letters/W_CompleteWord.unity
-    guid: d1b456d4770774ef99c0618c4389c1b8
-  - enabled: 1
-    path: Assets/Scenes/Letters/V_Decorate.unity
-    guid: 7a16ab3c6420940118ebbc985238c06e
-  - enabled: 1
-    path: Assets/Scenes/Letters/U_Decorate.unity
-    guid: 6ef1652c05c8a49d58cd467aebd482ce
-  - enabled: 1
-    path: Assets/Scenes/Letters/T_Decorate.unity
-    guid: 719b4307401a14f47a9d5951fc06cb48
-  - enabled: 1
-    path: Assets/Scenes/Letters/S_CompleteWrite.unity
-    guid: 8a45b15ad082a42a7b887ddf06333133
-  - enabled: 1
-    path: Assets/Scenes/Letters/R_Decorate.unity
-    guid: 2599b45bb471243b5af9d2b58c429db7
-  - enabled: 1
-    path: Assets/Scenes/Letters/F_Decorate.unity
-    guid: 91077325ad5750143bc338dcff0bf107
-  - enabled: 1
-    path: Assets/Scenes/Letters/E_Musiceli.unity
-    guid: 25651609fa49e4643ad96f0f5850a674
-  - enabled: 1
-    path: Assets/Scenes/Letters/D_DraggingLetter.unity
-    guid: 735d3d26296626c4b956a203350f151e
-  - enabled: 1
-    path: Assets/Scenes/Letters/C_CompleteWrite.unity
-    guid: 62af28b9e67b58740957413b7a4b6567
+    path: Assets/Scenes/Letters/A_Decorate.unity
+    guid: a138ae609b5ebd748bb181dc8a49cc5f
   - enabled: 1
     path: Assets/Scenes/Letters/B_CompleteWord.unity
     guid: b5b64e5baf9f2274e875f3efea4349fe
   - enabled: 1
-    path: Assets/Scenes/Letters/A_Decorate.unity
-    guid: a138ae609b5ebd748bb181dc8a49cc5f
+    path: Assets/Scenes/Letters/C_CompleteWrite.unity
+    guid: 62af28b9e67b58740957413b7a4b6567
   - enabled: 1
-    path: Assets/Scenes/Numbers/4_Decorate.unity
-    guid: 0d18f9630b31a1746aad37aeb31d7d5d
+    path: Assets/Scenes/Letters/D_DraggingLetter.unity
+    guid: 735d3d26296626c4b956a203350f151e
   - enabled: 1
-    path: Assets/Scenes/Numbers/3_DraggingCount.unity
-    guid: db63c8d24cb306d49b696703c99576a8
+    path: Assets/Scenes/Letters/E_Musiceli.unity
+    guid: 25651609fa49e4643ad96f0f5850a674
+  - enabled: 1
+    path: Assets/Scenes/Letters/F_Decorate.unity
+    guid: 91077325ad5750143bc338dcff0bf107
+  - enabled: 1
+    path: Assets/Scenes/Letters/R_Decorate.unity
+    guid: 2599b45bb471243b5af9d2b58c429db7
+  - enabled: 1
+    path: Assets/Scenes/Letters/S_CompleteWrite.unity
+    guid: 8a45b15ad082a42a7b887ddf06333133
+  - enabled: 1
+    path: Assets/Scenes/Letters/T_Decorate.unity
+    guid: 719b4307401a14f47a9d5951fc06cb48
+  - enabled: 1
+    path: Assets/Scenes/Letters/U_Decorate.unity
+    guid: 6ef1652c05c8a49d58cd467aebd482ce
+  - enabled: 1
+    path: Assets/Scenes/Letters/V_Decorate.unity
+    guid: 7a16ab3c6420940118ebbc985238c06e
+  - enabled: 1
+    path: Assets/Scenes/Letters/W_CompleteWord.unity
+    guid: d1b456d4770774ef99c0618c4389c1b8
+  - enabled: 1
+    path: Assets/Scenes/Letters/X_Decorate.unity
+    guid: bd451b1fe7f6c470a99008f26b39b0eb
+  - enabled: 1
+    path: Assets/Scenes/Letters/Y_Decorate.unity
+    guid: e8f10a420c29a494f8113a7cec19a388
+  - enabled: 1
+    path: Assets/Scenes/Letters/Z_CompleteWrite.unity
+    guid: 0c63ea19d4d1a43b591d8b061163dd14
+  - enabled: 1
+    path: Assets/Scenes/Numbers/1_DraggingNumber.unity
+    guid: 2b4a37b5a83d0b044a88e576d27e23bf
   - enabled: 1
     path: Assets/Scenes/Numbers/2_PuzzleNumber.unity
     guid: 6207b36228e9fc34596eca9412159b9e
   - enabled: 1
-    path: Assets/Scenes/Numbers/1_DraggingNumber.unity
-    guid: 2b4a37b5a83d0b044a88e576d27e23bf
+    path: Assets/Scenes/Numbers/3_DraggingCount.unity
+    guid: db63c8d24cb306d49b696703c99576a8
+  - enabled: 1
+    path: Assets/Scenes/Numbers/4_Decorate.unity
+    guid: 0d18f9630b31a1746aad37aeb31d7d5d
+  - enabled: 1
+    path: Assets/asd.unity
+    guid: 88c717932de30db428aff716473a7a73
   m_configObjects: {}

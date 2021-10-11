@@ -4,6 +4,7 @@ namespace Manager
     using System.Collections;
     using UnityEngine;
     using UnityEngine.UI;
+    using Utlis;
 
     public class VerifyManager : MonoBehaviour
     {
@@ -35,30 +36,22 @@ namespace Manager
 
         private void Awake()
         {
-            if (GlobalManager.instance != null)
-            {
-                this.childName = GlobalManager.instance.childName;
-                this.nameTextField.text = this.childName;
-            }
-            else
-            {
-                Debug.LogWarning("Global Manager Not Found!");
-                this.childName = PlayerPrefs.GetString("name");
-                this.nameTextField.text = this.childName;
-            }
+            this.childName = PlayerPrefs.GetString("name");
+            if (this.childName.Length == 0 || this.childName == "")
+                this.childName = "ERROR";
+
+            this.nameTextField.text = this.childName;
         }
 
         public void VerifyName()
         {
             // Check the name over OCR
-            //this.GetComponent<Camera2Screenshot>().takeScreenshot();
-            //GlobalManager.instance.ChangeScene("selection");
             takeScreenshotAndRecognise();
         }
 
         public void BackHome()
         {
-            GlobalManager.instance.ChangeScene("home");
+            Utility.ChangeScene("Home");
         }
 
         private void Recognize()
@@ -90,7 +83,8 @@ namespace Manager
                 onActivityComplete();
 
             }
-            GlobalManager.instance.ChangeScene("selection");
+
+            Utility.ChangeScene("Selection");
         }
 
         private void onActivityComplete()

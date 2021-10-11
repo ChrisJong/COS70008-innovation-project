@@ -7,6 +7,7 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
+    using Utlis;
 
     public class MatchManager : SingletonMono<MatchManager>
     {
@@ -42,14 +43,9 @@ namespace Manager
             }
         }
 
-        public void BackToSelection()
-        {
-            GlobalManager.instance.ChangeScene("selection");
-        }
-
         public void MoveToNextScene(string sceneName)
         {
-            GlobalManager.instance.ChangeScene(sceneName);
+            Utility.ChangeScene(sceneName);
         }
 
         private void onActivityComplete()

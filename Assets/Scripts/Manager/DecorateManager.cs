@@ -8,6 +8,7 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
+    using Utlis;
 
     public class DecorateManager : SingletonMono<DecorateManager>
     {
@@ -63,14 +64,9 @@ namespace Manager
             onActivityComplete();
         }
 
-        public void BackToSelection()
-        {
-            GlobalManager.instance.ChangeScene("selection");
-        }
-
         public void MoveToNextScene(string sceneName)
         {
-            GlobalManager.instance.ChangeScene(sceneName);
+            Utility.ChangeScene(sceneName);
         }
 
         private void onActivityComplete()

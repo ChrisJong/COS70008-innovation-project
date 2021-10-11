@@ -4,6 +4,7 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
+    using Utlis;
 
     public class SelectionManager : SingletonMono<SelectionManager>
     {
@@ -35,12 +36,12 @@ namespace Manager
 
         public void BackHome()
         {
-            GlobalManager.instance.ChangeScene("home");
+            Utility.ChangeScene("Home");
         }
 
         public void StartActivity(string sceneName)
         {
-            GlobalManager.instance.ChangeScene(sceneName);
+            Utility.ChangeScene(sceneName);
         }
     }
 }
