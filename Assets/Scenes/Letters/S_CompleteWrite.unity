@@ -851,16 +851,13 @@ MonoBehaviour:
   _completed: 0
   _letterImage: {fileID: 1534296428}
   _pictureImage: {fileID: 1229986258}
+  _pointsObject: {fileID: 1959000746}
+  _sequencePoints: []
   _letterOutlineSprite: {fileID: 21300000, guid: c0844a9f4b08d4f1e999515e1d7e1594, type: 3}
   _pictureOutlineSprite: {fileID: 21300000, guid: 8b5f311fd4e2c4ea19f4a0aa41559b56, type: 3}
   _pictureCompleteSprite: {fileID: 21300000, guid: 20825e6b1c10e401fb4f6fb28b9bc4f6, type: 3}
   textField: {fileID: 1712187095}
   completedText: SHEEP
-  _sequencePoints:
-  - {fileID: 1239562387}
-  - {fileID: 689045532}
-  - {fileID: 1297003476}
-  - {fileID: 430384484}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
 --- !u!1 &1229986257
 GameObject:

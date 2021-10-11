@@ -1010,18 +1010,13 @@ MonoBehaviour:
   _completed: 0
   _letterImage: {fileID: 1534296428}
   _pictureImage: {fileID: 1229986258}
+  _pointsObject: {fileID: 1528593730}
+  _sequencePoints: []
   _letterOutlineSprite: {fileID: 21300000, guid: f194250eca4da4d37a5dde46a388bf6d, type: 3}
   _pictureOutlineSprite: {fileID: 21300000, guid: d37e6d1a110d1412cb3b78df1cce08e9, type: 3}
   _pictureCompleteSprite: {fileID: 21300000, guid: e06de455bee9547c88ec0a1d0a72e805, type: 3}
   textField: {fileID: 1259242005}
   completedText: ZEBRA
-  _sequencePoints:
-  - {fileID: 918559718}
-  - {fileID: 1335234843}
-  - {fileID: 568888303}
-  - {fileID: 2102314562}
-  - {fileID: 93778985}
-  - {fileID: 864658087}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
 --- !u!1 &1229986257
 GameObject:

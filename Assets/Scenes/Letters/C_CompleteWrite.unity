@@ -783,17 +783,13 @@ MonoBehaviour:
   _completed: 0
   _letterImage: {fileID: 1534296428}
   _pictureImage: {fileID: 1229986258}
+  _pointsObject: {fileID: 1608605393}
+  _sequencePoints: []
   _letterOutlineSprite: {fileID: 21300000, guid: a082fb0b5d892eb468bbe9c6d698745f, type: 3}
   _pictureOutlineSprite: {fileID: 21300000, guid: c10b97b68a39bfe4b9058a6bbf4e2df8, type: 3}
   _pictureCompleteSprite: {fileID: 21300000, guid: df787f25e91e5f849b6ca0680c1acae6, type: 3}
   textField: {fileID: 1152050913}
   completedText: CAT
-  _sequencePoints:
-  - {fileID: 1034730528}
-  - {fileID: 1490112911}
-  - {fileID: 1357361129}
-  - {fileID: 1280736076}
-  - {fileID: 1232002371}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
 --- !u!1 &1152050912
 GameObject:

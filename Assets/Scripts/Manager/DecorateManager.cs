@@ -15,13 +15,23 @@ namespace Manager
 
         [SerializeField] private Image _letterImage;
 
+        [SerializeField] private Transform _pointsObject;
+
+        [SerializeField] private List<SequencePoint> _sequencePoints;
+
         [Space(10), Header("Editable")]
         [SerializeField] private Sprite _letterOutlineSprite;
         [SerializeField] private Sprite _letterCompleteSprite;
 
-        [SerializeField] private List<SequencePoint> _sequencePoints;
-
+        [Space(10), Header("Audio")]
         public AudioClip SuccessAudioClip;
+
+        public override void Awake()
+        {
+            base.Awake();
+
+            this.GetAllPoints();
+        }
 
         public void Start()
         {
@@ -72,6 +82,31 @@ namespace Manager
                 AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
             }
 
+        }
+
+        private void GetAllPoints()
+        {
+            this._sequencePoints = new List<SequencePoint>();
+
+            if(this._pointsObject != null)
+            {
+                if(this._pointsObject.childCount == 0)
+                {
+                    Debug.LogWarning("There Are No Points Found!");
+                    return;
+                }
+
+                foreach(Transform pointObject in this._pointsObject)
+                {
+                    SequencePoint sqPoint = pointObject.GetComponent<SequencePoint>();
+                    if (sqPoint != null)
+                        this._sequencePoints.Add(sqPoint);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Please Add The Points Object!");
+            }
         }
     }
 }

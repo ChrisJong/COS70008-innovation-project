@@ -1074,15 +1074,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _completed: 0
   _letterImage: {fileID: 390087076}
+  _pointsObject: {fileID: 2063957564}
+  _sequencePoints: []
   _letterOutlineSprite: {fileID: 21300000, guid: e110848ef7fc9496ab78d4e648b753f4, type: 3}
   _letterCompleteSprite: {fileID: 21300000, guid: 369ff4ad262b4461a9a04a243bbb4194, type: 3}
-  _sequencePoints:
-  - {fileID: 33800861}
-  - {fileID: 769438340}
-  - {fileID: 1962907318}
-  - {fileID: 998508826}
-  - {fileID: 1441994491}
-  - {fileID: 414429119}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
 --- !u!1 &1531499214
 GameObject:
