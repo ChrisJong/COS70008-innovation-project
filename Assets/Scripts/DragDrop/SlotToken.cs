@@ -26,6 +26,7 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         if (!this.draggable)
             return;
 
+        this.transform.SetAsLastSibling();
         this.previousPosition = this.rectTransform.anchoredPosition3D;
         this.canvasGroup.blocksRaycasts = false;
     }
