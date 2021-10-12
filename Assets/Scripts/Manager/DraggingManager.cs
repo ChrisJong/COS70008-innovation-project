@@ -7,16 +7,18 @@ namespace Manager
     using UnityEngine;
 
     using Extension;
-    using Utlis;
+    using Utils;
 
     public class DraggingManager : SingletonMono<DraggingManager>
     {
+        [Header("Main Components")]
         public List<SlotHandler> slots;
 
         public List<SlotToken> tokens;
 
         public bool completed = false;
 
+        [Space(10), Header("Audio")]
         public AudioClip SuccessAudioClip;
 
         public void CheckMatches()
@@ -60,7 +62,10 @@ namespace Manager
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
-                AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                else
+                    Utility.PlayOneShot(this.SuccessAudioClip);
             }
 
         }

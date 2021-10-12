@@ -1,25 +1,27 @@
 namespace Manager
 {
-    using System;
     using System.Collections.Generic;
 
     using UnityEngine;
     using UnityEngine.UI;
 
     using Extension;
-    using Utlis;
+    using Utils;
 
     public class MatchManager : SingletonMono<MatchManager>
     {
         public int completedCount = 0;
 
+        public Canvas mainCanvas;
+
+        [Space(10), Header("Editable")]
         public List<SlotHandler> slots;
 
         public GameObject boardOutline;
         public GameObject boardCompleted;
 
-        public Canvas mainCanvas;
-
+        [Space(10), Header("Audio")]
+        public AudioClip slotCompleteAudioClip;
         public AudioClip SuccessAudioClip;
 
         public void CheckMatches()
@@ -55,7 +57,16 @@ namespace Manager
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
-                AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                if (AudioManager.instance != null)
+                {
+                    AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                    Utility.PlayOneShot(this.slotCompleteAudioClip);
+                }
+                else
+                {
+                    Utility.PlayOneShot(this.slotCompleteAudioClip);
+                    Utility.PlayOneShot(this.SuccessAudioClip);
+                }
             }
 
         }

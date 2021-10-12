@@ -580,8 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: D
+  tokenAudioClip: {fileID: 8300000, guid: edb3129fe1e53a849a6bfc00ceed8d1e, type: 3}
 --- !u!225 &664453342
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1045,8 +1045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: R
+  tokenAudioClip: {fileID: 8300000, guid: 53756ee2946a2dd4a9b9e3887cfbf912, type: 3}
 --- !u!225 &1703897779
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1573,8 +1573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: A
+  tokenAudioClip: {fileID: 8300000, guid: 51acb1133b0bf554abe15c372147ff60, type: 3}
 --- !u!225 &2014561580
 CanvasGroup:
   m_ObjectHideFlags: 0

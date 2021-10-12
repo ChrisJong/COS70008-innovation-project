@@ -1,6 +1,5 @@
 namespace Manager
 {
-
     using System.Collections;
     using System.Collections.Generic;
 
@@ -8,10 +7,11 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
-    using Utlis;
+    using Utils;
 
     public class DecorateManager : SingletonMono<DecorateManager>
     {
+        [Space(10), Header("Main Components")]
         [SerializeField] private bool _completed = false;
 
         [SerializeField] private Image _letterImage;
@@ -25,6 +25,7 @@ namespace Manager
         [SerializeField] private Sprite _letterCompleteSprite;
 
         [Space(10), Header("Audio")]
+        public AudioClip startLetterAudioClip;
         public AudioClip SuccessAudioClip;
 
         public override void Awake()
@@ -37,6 +38,12 @@ namespace Manager
         public void Start()
         {
             this._letterImage.sprite = this._letterOutlineSprite;
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlaySoundEffect(startLetterAudioClip);
+            else
+                Utility.PlayOneShot(this.startLetterAudioClip);
+
         }
 
         public void Check()
@@ -75,7 +82,10 @@ namespace Manager
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
-                AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                else
+                    Utility.PlayOneShot(this.SuccessAudioClip);
             }
 
         }

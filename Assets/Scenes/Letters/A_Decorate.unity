@@ -981,6 +981,7 @@ MonoBehaviour:
   _sequencePoints: []
   _letterOutlineSprite: {fileID: 21300000, guid: b17bcdaaa4048cb4e8558266ba150e6e, type: 3}
   _letterCompleteSprite: {fileID: 21300000, guid: 0f7a00343deef184195b74e57ba58c91, type: 3}
+  startLetterAudioClip: {fileID: 8300000, guid: 7d8f3a19f51980541ae30a54add13c76, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
 --- !u!1 &1531499214
 GameObject:

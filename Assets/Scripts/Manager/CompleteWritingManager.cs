@@ -7,10 +7,11 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
-    using Utlis;
+    using Utils;
 
     public class CompleteWritingManager : SingletonMono<CompleteWritingManager>
     {
+        [Header("Main Components")]
         [SerializeField] private bool _completed = false;
 
         [SerializeField] private Image _letterImage;
@@ -30,6 +31,8 @@ namespace Manager
         public string completedText;
 
         [Space(10), Header("Audio")]
+        public AudioClip startLetterAudioClip;
+        public AudioClip writingCompleteAudioClip;
         public AudioClip SuccessAudioClip;
 
         public override void Awake()
@@ -43,6 +46,11 @@ namespace Manager
         {
             this._letterImage.sprite = this._letterOutlineSprite;
             this._pictureImage.sprite = this._pictureOutlineSprite;
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlaySoundEffect(this.startLetterAudioClip);
+            else
+                Utility.PlayOneShot(this.startLetterAudioClip);
         }
 
         public void Check()
@@ -65,6 +73,7 @@ namespace Manager
             {
                 textField.text = completedText;
             }
+
             onActivityComplete();
         }
 
@@ -79,7 +88,16 @@ namespace Manager
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
-                AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                if (AudioManager.instance != null)
+                {
+                    AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                    Utility.PlayOneShot(this.writingCompleteAudioClip);
+                }
+                else
+                {
+                    Utility.PlayOneShot(this.writingCompleteAudioClip);
+                    Utility.PlayOneShot(this.SuccessAudioClip);
+                }
             }
         }
 

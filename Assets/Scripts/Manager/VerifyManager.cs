@@ -2,9 +2,11 @@ namespace Manager
 {
     using System;
     using System.Collections;
+
     using UnityEngine;
     using UnityEngine.UI;
-    using Utlis;
+
+    using Utils;
 
     public class VerifyManager : MonoBehaviour
     {
@@ -92,7 +94,10 @@ namespace Manager
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
-                AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                else
+                    Utility.PlayOneShot(this.SuccessAudioClip);
             }
         }
 

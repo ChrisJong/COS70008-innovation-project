@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -580,8 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: 2
+  tokenAudioClip: {fileID: 8300000, guid: eb2f64dae9bf3794bbe44db356233989, type: 3}
 --- !u!225 &664453342
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1045,8 +1045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: 3
+  tokenAudioClip: {fileID: 8300000, guid: 10c783d5e0474ff48b48dbc3a09f83cf, type: 3}
 --- !u!225 &1703897779
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1573,8 +1573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: 1
+  tokenAudioClip: {fileID: 8300000, guid: 53f44f10b9ebf0b49b5f517406dd6222, type: 3}
 --- !u!225 &2014561580
 CanvasGroup:
   m_ObjectHideFlags: 0

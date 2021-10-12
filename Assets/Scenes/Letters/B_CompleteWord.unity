@@ -167,11 +167,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completedCount: 0
+  mainCanvas: {fileID: 589420876}
   slots:
   - {fileID: 842526769}
   boardOutline: {fileID: 1438960925}
   boardCompleted: {fileID: 618029246}
-  mainCanvas: {fileID: 589420876}
+  slotCompleteAudioClip: {fileID: 8300000, guid: 7d5088f90252307419a869b741cd2963, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
 --- !u!1 &361537973
 GameObject:
@@ -1104,8 +1105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: R
+  tokenAudioClip: {fileID: 8300000, guid: 88d92ad067b525242b673e4631663385, type: 3}
 --- !u!1 &1438960925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,8 +1323,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: H
+  tokenAudioClip: {fileID: 8300000, guid: 9aaddf715cff08d4898ad357b714a196, type: 3}
 --- !u!1 &1555023389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,8 +1468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: B
+  tokenAudioClip: {fileID: 8300000, guid: f5717487087a7ec4897ff5ddaea20d2d, type: 3}
 --- !u!1 &1658768680
 GameObject:
   m_ObjectHideFlags: 0

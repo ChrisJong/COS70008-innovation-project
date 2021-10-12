@@ -2,23 +2,27 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 using Manager;
+using Utils;
 
 public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
     public bool draggable = true;
 
-    public Vector3 previousPosition = Vector3.zero;
-
     public string myLetter;
 
-    private RectTransform rectTransform;
+    [Space(10), Header("Audio")]
+    public AudioClip tokenAudioClip;
+
+    private Vector3 _previousPosition = Vector3.zero;
+
+    private RectTransform _rectTransform;
     
-    private CanvasGroup canvasGroup;
+    private CanvasGroup _canvasGroup;
 
     private void Awake()
     {
-        this.rectTransform = this.GetComponent<RectTransform>();
-        this.canvasGroup = this.GetComponent<CanvasGroup>();
+        this._rectTransform = this.GetComponent<RectTransform>();
+        this._canvasGroup = this.GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -26,9 +30,14 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
         if (!this.draggable)
             return;
 
+        if (AudioManager.instance != null & this.tokenAudioClip != null)
+            AudioManager.instance.PlaySoundEffect(this.tokenAudioClip);
+        else if(this.tokenAudioClip != null)
+            Utility.PlayOneShot(this.tokenAudioClip);
+
         this.transform.SetAsLastSibling();
-        this.previousPosition = this.rectTransform.anchoredPosition3D;
-        this.canvasGroup.blocksRaycasts = false;
+        this._previousPosition = this._rectTransform.anchoredPosition3D;
+        this._canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -37,7 +46,7 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
             return;
 
         if (MatchManager.instance != null)
-            this.rectTransform.anchoredPosition += eventData.delta / MatchManager.instance.mainCanvas.scaleFactor;
+            this._rectTransform.anchoredPosition += eventData.delta / MatchManager.instance.mainCanvas.scaleFactor;
         else
         {
             Vector3 temp = Camera.main.ScreenToWorldPoint(eventData.position);
@@ -48,7 +57,7 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        this.canvasGroup.blocksRaycasts = true;
+        this._canvasGroup.blocksRaycasts = true;
 
         if (PuzzleManager.instance != null)
         {
@@ -66,6 +75,6 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void MoveBack()
     {
-        this.rectTransform.anchoredPosition3D = this.previousPosition;
+        this._rectTransform.anchoredPosition3D = this._previousPosition;
     }
 }

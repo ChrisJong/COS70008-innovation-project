@@ -31,6 +31,9 @@ namespace Manager
         // Play a clip for sound effect
         public void PlaySoundEffect(AudioClip clip)
         {
+            if (EffectsSource.isPlaying)
+                EffectsSource.Stop();
+
             EffectsSource.clip = clip;
             EffectsSource.Play();
         }

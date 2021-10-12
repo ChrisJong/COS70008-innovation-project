@@ -7,18 +7,21 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
-    using Utlis;
+    using Utils;
 
     public class PuzzleManager : SingletonMono<PuzzleManager>
     {
+        [Header("Main Components")]
         public bool completed = false;
 
         public Image completedPanel;
 
+        [Space(10), Header("Editable")]
         public List<SlotHandler> slots;
 
         public Sprite completedImage;
 
+        [Space(10), Header("Audio")]
         public AudioClip successAduioClip;
 
         public void Start()
@@ -53,8 +56,10 @@ namespace Manager
             if (this.successAduioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
-                if(AudioManager.instance != null)
+                if (AudioManager.instance != null)
                     AudioManager.instance.PlaySoundEffect(this.successAduioClip);
+                else
+                    Utility.PlayOneShot(this.successAduioClip);
             }
 
         }

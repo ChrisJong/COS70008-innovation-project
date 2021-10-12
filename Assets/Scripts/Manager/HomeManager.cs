@@ -4,7 +4,7 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
-    using Utlis;
+    using Utils;
 
     public class HomeManager : SingletonMono<HomeManager>
     {
