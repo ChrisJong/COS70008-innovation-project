@@ -1,8 +1,12 @@
 namespace Manager
 {
+    using System;
     using System.Collections;
+
     using UnityEngine;
     using UnityEngine.UI;
+
+    using Utils;
 
     public class VerifyManager : MonoBehaviour
     {
@@ -20,6 +24,8 @@ namespace Manager
         public Texture2D HighlightedTexture;
         private RenderTexture RenderTexture;
 
+        public AudioClip SuccessAudioClip;
+
         private void Start()
         {
             _tesseractDriver = new TesseractDriver();
@@ -32,30 +38,22 @@ namespace Manager
 
         private void Awake()
         {
-            if (GlobalManager.instance != null)
-            {
-                this.childName = GlobalManager.instance.childName;
-                this.nameTextField.text = this.childName;
-            }
-            else
-            {
-                Debug.LogWarning("Global Manager Not Found!");
-                this.childName = PlayerPrefs.GetString("name");
-                this.nameTextField.text = this.childName;
-            }
+            this.childName = PlayerPrefs.GetString("name");
+            if (this.childName.Length == 0 || this.childName == "")
+                this.childName = "ERROR";
+
+            this.nameTextField.text = this.childName;
         }
 
         public void VerifyName()
         {
             // Check the name over OCR
-            //this.GetComponent<Camera2Screenshot>().takeScreenshot();
-            //GlobalManager.instance.ChangeScene("selection");
             takeScreenshotAndRecognise();
         }
 
         public void BackHome()
         {
-            GlobalManager.instance.ChangeScene("home");
+            Utility.ChangeScene("Home");
         }
 
         private void Recognize()
@@ -76,7 +74,31 @@ namespace Manager
                 return;
             };
             _text = _tesseractDriver.Recognize(ScreenshotTexture);
+            _text = _text.Replace(" ", "");
             HighlightedTexture = _tesseractDriver.GetHighlightedTexture();
+
+            Debug.Log("Childname: " + childName);
+            Debug.Log("_text: " + _text);
+
+            if (childName.ToLower() == _text.ToLower())
+            {
+                onActivityComplete();
+
+            }
+
+            Utility.ChangeScene("Selection");
+        }
+
+        private void onActivityComplete()
+        {
+            if (SuccessAudioClip != null)
+            {
+                Debug.Log("Playing sound effect using audio manager");
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                else
+                    Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
+            }
         }
 
         private void takeScreenshotAndRecognise()

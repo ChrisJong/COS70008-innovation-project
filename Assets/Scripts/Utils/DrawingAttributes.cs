@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class DrawingAttributes : MonoBehaviour
 {
-    [SerializeField] private int _pointcount;
-    public int PointCount { get { return this._pointcount; } }
+    [SerializeField] private int _pointCount;
+    public int PointCount { get { return this._pointCount; } }
 
     [SerializeField] Vector3 _startPoint;
     [SerializeField] Vector3 _endPoint;
@@ -22,8 +22,8 @@ public class DrawingAttributes : MonoBehaviour
         else
         {
             this._points = new List<Vector3>(points);
-            this._startPoint = points[0];
-            this._endPoint = points[points.Length-1];
+            this._startPoint = this._points[0];
+            this._endPoint = this._points[points.Length-1];
         }
 
         return true;
@@ -36,8 +36,8 @@ public class DrawingAttributes : MonoBehaviour
         else
         {
             this._points = new List<Vector3>(points);
-            this._startPoint = points[0];
-            this._endPoint = points[points.Count];
+            this._startPoint = this._points[0];
+            this._endPoint = this._points[points.Count];
         }
 
         return true;
@@ -55,10 +55,10 @@ public class DrawingAttributes : MonoBehaviour
             this._points.Add(point);
         }
 
-        this._pointcount++;
+        this._pointCount++;
 
-        this._lineRenderer.positionCount = this._pointcount;
-        this._lineRenderer.SetPosition(this._pointcount - 1, point);
+        this._lineRenderer.positionCount = this._pointCount;
+        this._lineRenderer.SetPosition(this._pointCount - 1, point);
 
         return true;
     }

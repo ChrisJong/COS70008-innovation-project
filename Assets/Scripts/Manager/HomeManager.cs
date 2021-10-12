@@ -4,6 +4,7 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
+    using Utils;
 
     public class HomeManager : SingletonMono<HomeManager>
     {
@@ -15,16 +16,14 @@ namespace Manager
         {
             this.childName = this.nameInputField.text.ToUpper();
 
-            if(GlobalManager.instance != null)
-            {
-                GlobalManager.instance.childName = this.childName;
-            } 
-            else
-            {
-                PlayerPrefs.SetString("name", this.childName);
-            }
+            PlayerPrefs.SetString("name", this.childName);
 
-            GlobalManager.instance.ChangeScene("verify");
+            Utility.ChangeScene("Verify");
+        }
+
+        private void Start()
+        {
+            AudioManager.instance.PlayMusic();
         }
     }
 }

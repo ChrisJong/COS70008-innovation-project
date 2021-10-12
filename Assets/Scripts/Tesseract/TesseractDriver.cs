@@ -69,7 +69,21 @@ public class TesseractDriver
 
         foreach (String fileName in fileNames)
         {
-            if (!File.Exists(toPath + fileName))
+            bool fileExists = false;
+            string filePath = toPath + fileName;
+            if (File.Exists(filePath))
+            {
+                byte[] byteArray = File.ReadAllBytes(filePath);
+                if(byteArray.Length > 0)
+                {
+                    fileExists = true;
+                } else
+                {
+                    File.Delete(toPath + fileName);
+                }
+            }
+            
+            if (!fileExists)
             {
                 Debug.Log("Copying from " + fromPath + fileName + " to " + toPath);
                 WWW www = new WWW(fromPath + fileName);
@@ -78,6 +92,7 @@ public class TesseractDriver
                 {
                     await Task.Delay(TimeSpan.FromSeconds(Time.deltaTime));
                 }
+                Debug.Log(www.bytes);
 
                 File.WriteAllBytes(toPath + fileName, www.bytes);
                 Debug.Log("File copy done");
@@ -114,6 +129,11 @@ public class TesseractDriver
     {
         if (File.Exists(Application.persistentDataPath + "/" + fileName))
         {
+            byte[] arr = File.ReadAllBytes(Application.persistentDataPath + "/" + fileName);
+            Debug.Log("Byte Array length: " + arr.Length);
+            //Debug.Log("First Byte: " + arr[0]);
+            //Debug.Log("Second Byte: " + arr[1]);
+            Debug.Log("Extracting file: " + Application.persistentDataPath + "/" + fileName);
             UnZipUtil.ExtractTGZ(Application.persistentDataPath + "/" + fileName, Application.persistentDataPath);
             Debug.Log("UnZipping Done");
         }

@@ -1,5 +1,5 @@
-namespace Manager {
-
+namespace Manager
+{
     using System.Collections;
     using System.Collections.Generic;
 
@@ -7,22 +7,46 @@ namespace Manager {
     using UnityEngine.UI;
 
     using Extension;
+    using Utils;
 
-    public class DecorateManager : SingletonMono<DecorateManager> 
+    public class DecorateManager : SingletonMono<DecorateManager>
     {
+        [Space(10), Header("Main Components")]
         [SerializeField] private bool _completed = false;
 
         [SerializeField] private Image _letterImage;
+
+        [SerializeField] private Transform _pointsObject;
+
+        [SerializeField] private List<SequencePoint> _sequencePoints;
 
         [Space(10), Header("Editable")]
         [SerializeField] private Sprite _letterOutlineSprite;
         [SerializeField] private Sprite _letterCompleteSprite;
 
-        [SerializeField] private List<SequencePoint> _sequencePoints;
+        [Space(10), Header("Audio")]
+        public AudioClip startLetterAudioClip;
+        public AudioClip SuccessAudioClip;
+
+        [Space(10), Header("Particles")]
+        public ParticleSystem successParticleSystem;
+
+        public override void Awake()
+        {
+            base.Awake();
+
+            this.GetAllPoints();
+        }
 
         public void Start()
         {
             this._letterImage.sprite = this._letterOutlineSprite;
+
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlaySoundEffect(startLetterAudioClip);
+            else
+                Utility.PlayOneShot(this.startLetterAudioClip);
+
         }
 
         public void Check()
@@ -47,12 +71,58 @@ namespace Manager {
                 DrawingManager.instance.ClearLines();
             }
 
-            this._completed = true;
+            onActivityComplete();
         }
 
-        public void BackToSelection()
+        public void MoveToNextScene(string sceneName)
         {
-            GlobalManager.instance.ChangeScene("selection");
+            Utility.ChangeScene(sceneName);
+        }
+
+        private void onActivityComplete()
+        {
+            this._completed = true;
+
+            if (SuccessAudioClip != null)
+            {
+                Debug.Log("Playing sound effect using audio manager");
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+                else
+                    Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
+            }
+
+            if(successParticleSystem != null)
+            {
+                Debug.Log("Playing Particle System");
+                successParticleSystem.Play();
+            }
+
+        }
+
+        private void GetAllPoints()
+        {
+            this._sequencePoints = new List<SequencePoint>();
+
+            if(this._pointsObject != null)
+            {
+                if(this._pointsObject.childCount == 0)
+                {
+                    Debug.LogWarning("There Are No Points Found!");
+                    return;
+                }
+
+                foreach(Transform pointObject in this._pointsObject)
+                {
+                    SequencePoint sqPoint = pointObject.GetComponent<SequencePoint>();
+                    if (sqPoint != null)
+                        this._sequencePoints.Add(sqPoint);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Please Add The Points Object!");
+            }
         }
     }
 }

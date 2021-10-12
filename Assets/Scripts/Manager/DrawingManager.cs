@@ -49,21 +49,21 @@ namespace Manager
             {
                 if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
                 {
-                    Debug.Log("Begin");
+                    //Debug.Log("Begin");
                     this._mousePosPrevious = this._mousePosCurrent;
                     this.HandleDrawing(hit.collider);
                     this._drawingStarted = true;
                 }
                 else if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) || Input.GetMouseButton(0))
                 {
-                    Debug.Log("Moving");
+                    //Debug.Log("Moving");
                     float dist = Mathf.Abs(Vector3.Distance(this._mousePosCurrent, this._mousePosPrevious));
                     if (dist >= 0.1f)
                         this.HandleDrawing(hit.collider);
                 }
                 else if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
                 {
-                    Debug.Log("Up");
+                    //Debug.Log("Up");
                     this.EndDrawing();
                 }
             } 
