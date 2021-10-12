@@ -21,6 +21,9 @@ namespace Manager
         [Space(10), Header("Audio")]
         public AudioClip SuccessAudioClip;
 
+        [Space(10), Header("Particles")]
+        public ParticleSystem successParticleSystem;
+
         public void CheckMatches()
         {
             if (this.slots.Count >= 0)
@@ -66,6 +69,11 @@ namespace Manager
                     AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
                 else
                     Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
+            }
+            if (successParticleSystem != null)
+            {
+                Debug.Log("Playing Particle System");
+                successParticleSystem.Play();
             }
 
         }

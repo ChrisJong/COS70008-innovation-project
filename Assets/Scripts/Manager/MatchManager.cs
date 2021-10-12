@@ -24,6 +24,9 @@ namespace Manager
         public AudioClip slotCompleteAudioClip;
         public AudioClip SuccessAudioClip;
 
+        [Space(10), Header("Particles")]
+        public ParticleSystem successParticleSystem;
+
         public void CheckMatches()
         {
             if (this.completedCount == this.slots.Count)
@@ -67,6 +70,11 @@ namespace Manager
                     Utility.PlayOneShot(this.slotCompleteAudioClip);
                     Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
                 }
+            }
+            if (successParticleSystem != null)
+            {
+                Debug.Log("Playing Particle System");
+                successParticleSystem.Play();
             }
 
         }
