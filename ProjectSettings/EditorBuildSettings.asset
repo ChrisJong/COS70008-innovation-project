@@ -71,7 +71,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Numbers/4_Decorate.unity
     guid: 0d18f9630b31a1746aad37aeb31d7d5d
-  - enabled: 1
-    path: Assets/asd.unity
-    guid: 88c717932de30db428aff716473a7a73
   m_configObjects: {}
