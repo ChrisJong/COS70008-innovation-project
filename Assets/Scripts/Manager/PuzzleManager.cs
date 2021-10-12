@@ -59,7 +59,7 @@ namespace Manager
                 if (AudioManager.instance != null)
                     AudioManager.instance.PlaySoundEffect(this.successAduioClip);
                 else
-                    Utility.PlayOneShot(this.successAduioClip);
+                    Utility.PlayOneShot(this.successAduioClip, 0.5f);
             }
 
         }

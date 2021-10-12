@@ -65,7 +65,7 @@ namespace Manager
                 if (AudioManager.instance != null)
                     AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
                 else
-                    Utility.PlayOneShot(this.SuccessAudioClip);
+                    Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
             }
 
         }

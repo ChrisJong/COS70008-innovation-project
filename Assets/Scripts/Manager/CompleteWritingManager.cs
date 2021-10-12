@@ -96,7 +96,7 @@ namespace Manager
                 else
                 {
                     Utility.PlayOneShot(this.writingCompleteAudioClip);
-                    Utility.PlayOneShot(this.SuccessAudioClip);
+                    Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
                 }
             }
         }

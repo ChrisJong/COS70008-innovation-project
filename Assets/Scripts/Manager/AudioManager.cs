@@ -35,6 +35,16 @@ namespace Manager
                 EffectsSource.Stop();
 
             EffectsSource.clip = clip;
+            EffectsSource.volume = 1.0f;
+            EffectsSource.Play();
+        }
+        public void PlaySoundEffect(AudioClip clip, float volume = 1.0f)
+        {
+            if (EffectsSource.isPlaying)
+                EffectsSource.Stop();
+
+            EffectsSource.clip = clip;
+            EffectsSource.volume = volume;
             EffectsSource.Play();
         }
     }

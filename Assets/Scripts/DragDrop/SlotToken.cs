@@ -59,6 +59,9 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!this.draggable)
+            return;
+
         this._canvasGroup.blocksRaycasts = true;
 
         if (PuzzleManager.instance != null)
@@ -72,11 +75,17 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void OnDrop(PointerEventData eventData)
     {
+        if (!this.draggable)
+            return;
+
         eventData.pointerDrag.GetComponent<SlotToken>().MoveBack();
     }
 
     public void MoveBack()
     {
+        if (!this.draggable)
+            return;
+
         this._rectTransform.anchoredPosition3D = this._previousPosition;
     }
 }

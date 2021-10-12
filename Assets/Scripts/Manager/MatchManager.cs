@@ -65,7 +65,7 @@ namespace Manager
                 else
                 {
                     Utility.PlayOneShot(this.slotCompleteAudioClip);
-                    Utility.PlayOneShot(this.SuccessAudioClip);
+                    Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
                 }
             }
 
