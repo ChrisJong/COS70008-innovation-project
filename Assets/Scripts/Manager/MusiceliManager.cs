@@ -2,7 +2,10 @@ namespace Manager
 {
     using System.Collections;
     using System.Collections.Generic;
+
     using UnityEngine;
+
+    using Utils;
 
     public class MusiceliManager : MonoBehaviour
     {
@@ -24,7 +27,7 @@ namespace Manager
 
         public void BackToSelection()
         {
-            GlobalManager.instance.ChangeScene("selection");
+            Utility.ChangeScene("selection");
         }
 
         public void KeyPress()
