@@ -23,6 +23,8 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
     {
         this._rectTransform = this.GetComponent<RectTransform>();
         this._canvasGroup = this.GetComponent<CanvasGroup>();
+
+        this.draggable = true;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
