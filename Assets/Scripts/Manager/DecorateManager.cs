@@ -83,7 +83,7 @@ namespace Manager
         {
             this._completed = true;
 
-            if (SuccessAudioClip != null && AudioManager.instance != null)
+            if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
                 if (AudioManager.instance != null)
