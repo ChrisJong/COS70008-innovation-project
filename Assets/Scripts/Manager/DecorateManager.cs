@@ -27,6 +27,8 @@ namespace Manager
         [Space(10), Header("Audio")]
         public AudioClip SuccessAudioClip;
 
+        public ParticleSystem successParticleSystem;
+
         public override void Awake()
         {
             base.Awake();
@@ -72,10 +74,15 @@ namespace Manager
         private void onActivityComplete()
         {
             this._completed = true;
-            if (SuccessAudioClip != null)
+            if (SuccessAudioClip != null && AudioManager.instance != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
                 AudioManager.instance.PlaySoundEffect(SuccessAudioClip);
+            }
+            if(successParticleSystem != null)
+            {
+                Debug.Log("Playing Particle System");
+                successParticleSystem.Play();
             }
 
         }
