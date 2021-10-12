@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Letters/A_Decorate.unity
     guid: a138ae609b5ebd748bb181dc8a49cc5f
   - enabled: 1
-    path: Assets/Scenes/Letters/B_CompleteWord.unity
+    path: Assets/Scenes/Letters/B_Musiceli.unity
     guid: b5b64e5baf9f2274e875f3efea4349fe
   - enabled: 1
     path: Assets/Scenes/Letters/C_CompleteWrite.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Letters/D_DraggingLetter.unity
     guid: 735d3d26296626c4b956a203350f151e
   - enabled: 1
-    path: Assets/Scenes/Letters/E_Musiceli.unity
+    path: Assets/Scenes/Letters/E_CompleteWord.unity
     guid: 25651609fa49e4643ad96f0f5850a674
 <<<<<<< HEAD
   m_configObjects:

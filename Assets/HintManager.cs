@@ -21,7 +21,6 @@ namespace Manager
         [SerializeField] private float _startHintAt = 5.0f;
         [SerializeField] private float _timer = 0.0f;
         [SerializeField] private float _handSpeed = 5.0f;
-        float distance 
 
         public override void Awake()
         {
