@@ -35,6 +35,9 @@ namespace Manager
         public AudioClip writingCompleteAudioClip;
         public AudioClip SuccessAudioClip;
 
+        [Space(10), Header("Particles")]
+        public ParticleSystem successParticleSystem;
+
         public override void Awake()
         {
             base.Awake();
@@ -98,6 +101,11 @@ namespace Manager
                     Utility.PlayOneShot(this.writingCompleteAudioClip);
                     Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
                 }
+            }
+            if (successParticleSystem != null)
+            {
+                Debug.Log("Playing Particle System");
+                successParticleSystem.Play();
             }
         }
 

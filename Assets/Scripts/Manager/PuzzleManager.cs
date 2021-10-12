@@ -24,6 +24,9 @@ namespace Manager
         [Space(10), Header("Audio")]
         public AudioClip successAduioClip;
 
+        [Space(10), Header("Particles")]
+        public ParticleSystem successParticleSystem;
+
         public void Start()
         {
             if (this.completedPanel != null && this.completedImage != null)
@@ -62,6 +65,11 @@ namespace Manager
                     Utility.PlayOneShot(this.successAduioClip, 0.5f);
             }
 
+            if (successParticleSystem != null)
+            {
+                Debug.Log("Playing Particle System");
+                successParticleSystem.Play();
+            }
         }
     }
 }
