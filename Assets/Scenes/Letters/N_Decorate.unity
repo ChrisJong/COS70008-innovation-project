@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -987,13 +987,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _completed: 0
   _letterImage: {fileID: 390087076}
-  _letterOutlineSprite: {fileID: 21300000, guid: 0b4f6746a4a5880438dfcd68cc983cd7, type: 3}
-  _letterCompleteSprite: {fileID: 21300000, guid: beac10d55c40dcd4286402855d4f9ea1, type: 3}
+  _pointsObject: {fileID: 0}
   _sequencePoints:
   - {fileID: 1740123373}
   - {fileID: 2064100426}
   - {fileID: 1082651543}
   - {fileID: 2021343592}
+  _letterOutlineSprite: {fileID: 21300000, guid: 0b4f6746a4a5880438dfcd68cc983cd7, type: 3}
+  _letterCompleteSprite: {fileID: 21300000, guid: beac10d55c40dcd4286402855d4f9ea1, type: 3}
+  startLetterAudioClip: {fileID: 8300000, guid: 39dd85ac651be420cb6995e195ccbc9e, type: 3}
+  SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!1 &1531499214
 GameObject:
   m_ObjectHideFlags: 0

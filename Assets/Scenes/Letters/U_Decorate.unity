@@ -859,7 +859,7 @@ MonoBehaviour:
   _sequencePoints: []
   _letterOutlineSprite: {fileID: 21300000, guid: 7b5ec0d7d76a8463499275a9997d5199, type: 3}
   _letterCompleteSprite: {fileID: 21300000, guid: f858260ba6b9f453fb3e940f8c2a5daa, type: 3}
-  startLetterAudioClip: {fileID: 8300000, guid: d1286ea73554e46b39a77d40aca4707d, type: 3}
+  startLetterAudioClip: {fileID: 8300000, guid: 0848e6328ff5f43a3838c43a42a442ae, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
   successParticleSystem: {fileID: 0}
 --- !u!1 &1531499214
@@ -1382,7 +1382,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: V_Decorate
+          m_StringArgument: V_DraggingLetter
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &2134314671

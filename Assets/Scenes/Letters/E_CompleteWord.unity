@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1483,8 +1483,9 @@ MonoBehaviour:
   - {fileID: 2057269825}
   boardOutline: {fileID: 462215812}
   boardCompleted: {fileID: 1387848537}
-  slotCompleteAudioClip: {fileID: 8300000, guid: 7d5088f90252307419a869b741cd2963, type: 3}
+  slotCompleteAudioClip: {fileID: 8300000, guid: 613bab38621b74e368bc77a9f351bbf8, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!4 &1992240688
 Transform:
   m_ObjectHideFlags: 0

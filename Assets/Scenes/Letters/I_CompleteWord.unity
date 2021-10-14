@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -242,11 +242,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completedCount: 0
+  mainCanvas: {fileID: 589420876}
   slots:
   - {fileID: 842526769}
   boardOutline: {fileID: 1438960925}
   boardCompleted: {fileID: 618029246}
-  mainCanvas: {fileID: 589420876}
+  slotCompleteAudioClip: {fileID: 8300000, guid: d092514c5704b4bd1a7151ff1b7d05d1, type: 3}
+  SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!1 &361537973
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +816,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookingFor: I
+  lookingCount: 1
   completed: 0
+  token: {fileID: 0}
 --- !u!1 &1089680133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1036,10 +1041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: I
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
+  tokenAudioClip: {fileID: 0}
 --- !u!1 &1144792165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,10 +1259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: V
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
+  tokenAudioClip: {fileID: 0}
 --- !u!1 &1438960925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,10 +1478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: C
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
+  tokenAudioClip: {fileID: 0}
 --- !u!1 &1555023389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1624,10 +1623,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   draggable: 1
-  previousPosition: {x: 0, y: 0, z: 0}
   myLetter: L
-  rectTransform: {fileID: 0}
-  canvasGroup: {fileID: 0}
+  tokenAudioClip: {fileID: 0}
 --- !u!1 &1658768680
 GameObject:
   m_ObjectHideFlags: 0

@@ -1017,9 +1017,10 @@ MonoBehaviour:
   _pictureCompleteSprite: {fileID: 21300000, guid: e06de455bee9547c88ec0a1d0a72e805, type: 3}
   textField: {fileID: 1259242005}
   completedText: ZEBRA
-  startLetterAudioClip: {fileID: 8300000, guid: de9cf74f648f040f5947e2ef89d5e449, type: 3}
-  writingCompleteAudioClip: {fileID: 8300000, guid: 6b6256bec37f6411bb2cec8de78ce608, type: 3}
+  startLetterAudioClip: {fileID: 8300000, guid: 79374afa441844f9b80855567b6bb47c, type: 3}
+  writingCompleteAudioClip: {fileID: 8300000, guid: e0b3622a77c144392aa0818f6f333a03, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!1 &1229986257
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -790,9 +790,10 @@ MonoBehaviour:
   _pictureCompleteSprite: {fileID: 21300000, guid: df787f25e91e5f849b6ca0680c1acae6, type: 3}
   textField: {fileID: 1152050913}
   completedText: CAT
-  startLetterAudioClip: {fileID: 8300000, guid: c5f790ca9bf4b5b4199c79e6cfb0c622, type: 3}
-  writingCompleteAudioClip: {fileID: 8300000, guid: 659f127a050c658468c951a4b1b8eb5b, type: 3}
+  startLetterAudioClip: {fileID: 8300000, guid: 0d0ebcadc29e3407a834fc99eabcde97, type: 3}
+  writingCompleteAudioClip: {fileID: 8300000, guid: 8d07a10e4002f4fc69dc4d59197682dd, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!1 &1152050912
 GameObject:
   m_ObjectHideFlags: 0

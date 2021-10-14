@@ -567,7 +567,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 4_Decorate
+          m_StringArgument: 7_Decorate
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &461848424
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46ccd07bf9ea2694196fca2e0b6563e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b137f873aa522d54789ff53fbf2f3741, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1443,6 +1443,7 @@ MonoBehaviour:
   - {fileID: 1156680322}
   completed: 0
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!1 &854052375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2922,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 2_PuzzleNumber
+          m_StringArgument: 5_PuzzleNumber
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1788429087
