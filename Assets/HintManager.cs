@@ -4,6 +4,7 @@ namespace Manager
     using System.Collections.Generic;
 
     using UnityEngine;
+    using UnityEngine.UI;
 
     using Extension;
     using PathCreation;
@@ -13,6 +14,9 @@ namespace Manager
         public GameObject hand;
 
         public Transform pathsObject;
+
+        [SerializeField] private Image _handImage;
+        [SerializeField] private Animator _handAnimator;
 
         [SerializeField] private List<PathCreator> _paths;
 
@@ -26,12 +30,16 @@ namespace Manager
         {
             base.Awake();
 
-            this.GetAllPaths();
+            this._handAnimator = this.hand.GetComponent<Animator>();
+            this._handImage = this.hand.GetComponent<Image>();
+            //DisableHint();
+            EnableHint();
+            //this.GetAllPaths();
         }
 
-        private void Update()
+        public void Update()
         {
-            if(Input.touchCount == 0 || !Input.GetMouseButtonDown(0))
+            if(Input.touchCount == 0 || !Input.GetMouseButtonUp(0))
             {
                 if(!this._showingHints)
                     this._timer += Time.deltaTime;
@@ -50,6 +58,17 @@ namespace Manager
                 this._showingHints = false;
                 this._timer = 0.0f;
             }
+        }
+
+        public void EnableHint()
+        {
+            this._handAnimator.enabled = true;
+            this._handAnimator.Play("C-State");
+        }
+
+        public void DisableHint()
+        {
+            this._handAnimator.enabled = false;
         }
 
         private void GetAllPaths()

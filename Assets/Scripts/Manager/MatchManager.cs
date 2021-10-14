@@ -14,11 +14,13 @@ namespace Manager
 
         public Canvas mainCanvas;
 
+        public Image matchImage;
+
         [Space(10), Header("Editable")]
         public List<SlotHandler> slots;
 
-        public GameObject boardOutline;
-        public GameObject boardCompleted;
+        public Sprite outlineSprite;
+        public Sprite completeSprite;
 
         [Space(10), Header("Audio")]
         public AudioClip slotCompleteAudioClip;
@@ -26,6 +28,11 @@ namespace Manager
 
         [Space(10), Header("Particles")]
         public ParticleSystem successParticleSystem;
+
+        public void Start()
+        {
+            this.matchImage.sprite = this.outlineSprite;
+        }
 
         public void CheckMatches()
         {
@@ -41,8 +48,7 @@ namespace Manager
                         return;
                     else
                     {
-                        this.boardOutline.SetActive(false);
-                        this.boardCompleted.SetActive(true);
+                        onActivityComplete();
                     }
                 }
             }
@@ -55,8 +61,7 @@ namespace Manager
 
         private void onActivityComplete()
         {
-            this.boardOutline.SetActive(false);
-            this.boardCompleted.SetActive(true);
+            this.matchImage.sprite = this.completeSprite;
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
