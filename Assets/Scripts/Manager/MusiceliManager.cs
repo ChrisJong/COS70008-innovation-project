@@ -1,5 +1,3 @@
-namespace Manager
-{
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
@@ -22,10 +20,6 @@ namespace Manager
             }
         }
 
-        public void BackToSelection()
-        {
-            GlobalManager.instance.ChangeScene("selection");
-        }
 
         public void KeyPress()
         {
@@ -33,4 +27,3 @@ namespace Manager
             CheckMatches();
         }
     }
-}

@@ -17,6 +17,7 @@ public class piano : MonoBehaviour
     public AudioClip C_Note_Hold;
 
     public AudioClip music;
+    public AudioClip music2;
 
     private void Start()
     {
@@ -82,6 +83,12 @@ public class piano : MonoBehaviour
     public void Music_play()
     {
         aSource.clip = music;
+        aSource.Play();
+    }
+
+    public void Music2_play()
+    {
+        aSource.clip = music2;
         aSource.Play();
     }
 
