@@ -44,11 +44,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 0}
-  pathsObject: {fileID: 0}
-  _handImage: {fileID: 0}
+  pointOne: {fileID: 0}
+  pointTwo: {fileID: 0}
   _handAnimator: {fileID: 0}
-  _paths: []
+  _handTransform: {fileID: 0}
+  _PointToPointMode: 0
   _showingHints: 0
   _startHintAt: 5
   _timer: 0
-  _handSpeed: 0
+  _handSpeed: 300
+  _currentClip: 

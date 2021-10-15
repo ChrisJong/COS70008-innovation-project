@@ -7,94 +7,111 @@ namespace Manager
     using UnityEngine.UI;
 
     using Extension;
-    using PathCreation;
+    using Utils;
 
     public class HintManager : SingletonMono<HintManager>
     {
         public GameObject hand;
 
-        public Transform pathsObject;
-
-        [SerializeField] private Image _handImage;
-        [SerializeField] private Animator _handAnimator;
-
-        [SerializeField] private List<PathCreator> _paths;
-
         [SerializeField] private bool _showingHints = false;
 
         [SerializeField] private float _startHintAt = 5.0f;
-        [SerializeField] private float _timer = 0.0f;
-        [SerializeField] private float _handSpeed = 5.0f;
+        private float _timer = 0.0f;
+
+        private string _currentClip;
+
+        [Space(10), Header("Point To Point")]
+        public bool pointToPointMode = false;
+        public RectTransform startPoint;
+        public RectTransform endPoint;
+        [SerializeField] private float _handSpeed = 300.0f;
+
+        private Animator _handAnimator;
+        private RectTransform _handTransform;
 
         public override void Awake()
         {
             base.Awake();
 
             this._handAnimator = this.hand.GetComponent<Animator>();
-            this._handImage = this.hand.GetComponent<Image>();
-            //DisableHint();
-            EnableHint();
-            //this.GetAllPaths();
+            this._handTransform = this.hand.GetComponent<RectTransform>();
+
+            if (this.pointToPointMode)
+                this._handTransform.anchoredPosition = this.startPoint.anchoredPosition;
+
+            this.DisableHint();
         }
 
         public void Update()
         {
-            if(Input.touchCount == 0 || !Input.GetMouseButtonUp(0))
+            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
             {
-                if(!this._showingHints)
-                    this._timer += Time.deltaTime;
-
-                if(this._timer >= this._startHintAt)
-                {
-                    this._showingHints = true;
-                }
-                else
-                {
-                    this._showingHints = false;
-                }
-            }
-            else
-            {
-                this._showingHints = false;
                 this._timer = 0.0f;
-            }
-        }
-
-        public void EnableHint()
-        {
-            this._handAnimator.enabled = true;
-            this._handAnimator.Play("C-State");
-        }
-
-        public void DisableHint()
-        {
-            this._handAnimator.enabled = false;
-        }
-
-        private void GetAllPaths()
-        {
-            this._paths = new List<PathCreator>();
-
-            if(this.pathsObject != null)
-            {
-                if(this.pathsObject.childCount == 0)
-                {
-                    Debug.LogWarning("There are no paths Found!");
-                    return;
-                }
-
-                foreach(Transform path in this.pathsObject)
-                {
-                    PathCreator pathCreator = path.GetComponent<PathCreator>();
-
-                    if (pathCreator != null)
-                        this._paths.Add(pathCreator);
-                }
+                this._showingHints = false;
+                this.DisableHint();
             }
             else
             {
-                Debug.LogWarning("Please Add The Paths Object!");
+                if (this.pointToPointMode)
+                    this.PointToPointHint();
+                else
+                    this.AnimatorHint();
             }
+
+        }
+
+        private void PointToPointHint()
+        {
+            if (this._timer >= this._startHintAt)
+            {
+                this.EnableHintHand();
+
+                if(Vector2.Distance(this._handTransform.anchoredPosition, this.endPoint.anchoredPosition) <= 0.25f)
+                    this._handTransform.anchoredPosition = this.startPoint.anchoredPosition;
+                else
+                    this._handTransform.anchoredPosition = Vector2.MoveTowards(this._handTransform.anchoredPosition, this.endPoint.anchoredPosition, (this._handSpeed * Time.deltaTime));
+            }
+            else
+                this._timer += Time.deltaTime;
+        }
+
+        private void AnimatorHint()
+        {
+            if (this._showingHints)
+                return;
+
+            if (this._timer >= this._startHintAt)
+            {
+                this._showingHints = true;
+                this.EnableHintAnimator(Utility.GetSceneLetterName());
+            }
+            else
+            {
+                this._timer += Time.deltaTime;
+            }
+        }
+
+        private void EnableHintAnimator(string name)
+        {
+            this._currentClip = name + "-State";
+            this._handAnimator.gameObject.SetActive(true);
+            this._handAnimator.enabled = true;
+            this._handAnimator.Play(this._currentClip);
+        }
+
+        private void EnableHintHand()
+        {
+            this.hand.gameObject.SetActive(true);
+        }
+
+        private void DisableHint()
+        {
+            if (!this._handAnimator.gameObject.activeSelf)
+                return;
+
+            this._handAnimator.StopPlayback();
+            this._handAnimator.enabled = false;
+            this.hand.gameObject.SetActive(false);
         }
 
     }
