@@ -18,6 +18,7 @@ namespace Manager
         private string _text = ""; // Detected text
         private string _error = "";
         private bool _completed = false;
+        private bool _attempted = false;
 
         public Camera ScreenshotCamera; // Camera which takes screenshot of layer 6
         public Camera MainCamera; // Main Camera needed because it toggle it when taking screenshot
@@ -27,6 +28,7 @@ namespace Manager
 
         [Space(10), Header("Audio")]
         public AudioClip SuccessAudioClip;
+        public AudioClip FailureAudioClip;
 
         [Space(10), Header("Particles")]
         public ParticleSystem successParticleSystem;
@@ -53,11 +55,12 @@ namespace Manager
         public void Check()
         {
             // When completed activity or there was an error with tesseract
-            if (_completed || _error != "")
+            if (_completed || _error != "" || _attempted)
             {
                 Utility.ChangeScene("Selection");
                 return;
             }
+            _attempted = true; // have attempted this activity once
             // Check the name over OCR
             takeScreenshotAndRecognise();
         }
@@ -95,6 +98,21 @@ namespace Manager
             {
                 onActivityComplete();
 
+            }else
+            {
+                if(FailureAudioClip != null)
+                {
+                    if (AudioManager.instance != null)
+                    {
+                        Debug.Log("Playing sound effect using audio manager");
+                        AudioManager.instance.PlaySoundEffect(FailureAudioClip);
+                    }
+                    else
+                    {
+                        Debug.Log("Playing sound effect using utility");
+                        Utility.PlayOneShot(this.FailureAudioClip);
+                    }  
+                }
             }
         }
 

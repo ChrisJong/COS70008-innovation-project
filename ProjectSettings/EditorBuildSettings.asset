@@ -33,6 +33,39 @@ EditorBuildSettings:
     path: Assets/Scenes/Letters/F_Decorate.unity
     guid: 91077325ad5750143bc338dcff0bf107
   - enabled: 1
+    path: Assets/Scenes/Letters/G_CompleteWrite.unity
+    guid: 00ae1a9cf0c921144becb3b3b2c87f52
+  - enabled: 1
+    path: Assets/Scenes/Letters/H_Decorate.unity
+    guid: e625ae4bafd006d4f892aa07221f21ec
+  - enabled: 1
+    path: Assets/Scenes/Letters/I_CompleteWord.unity
+    guid: a4a5cb8c842f8274ab9412ade0e2b30a
+  - enabled: 1
+    path: Assets/Scenes/Letters/J_Musiceli.unity
+    guid: ebfa625eb8b502440a7c458d6fea4256
+  - enabled: 1
+    path: Assets/Scenes/Letters/K_CompleteWrite.unity
+    guid: 49d420a6719924e4f95031576ea4dde3
+  - enabled: 1
+    path: Assets/Scenes/Letters/L_Musiceli.unity
+    guid: c3964255a7d77f7468b3a2813e939dd5
+  - enabled: 1
+    path: Assets/Scenes/Letters/M_CompleteWord.unity
+    guid: 9b6f851e7807b0d4482398e3fee2f6ee
+  - enabled: 1
+    path: Assets/Scenes/Letters/N_Decorate.unity
+    guid: 2cc766b0926273046a93cb0413991fd5
+  - enabled: 1
+    path: Assets/Scenes/Letters/O_DraggingLetter.unity
+    guid: 0c847d0c98b9c4b05ad4f4c0669aec2e
+  - enabled: 1
+    path: Assets/Scenes/Letters/P_Musiceli.unity
+    guid: 34273030398de4871980528a8584613f
+  - enabled: 1
+    path: Assets/Scenes/Letters/Q_CompleteWord.unity
+    guid: e7e2bc8fd87854d8f86f26456015d120
+  - enabled: 1
     path: Assets/Scenes/Letters/R_Decorate.unity
     guid: 2599b45bb471243b5af9d2b58c429db7
   - enabled: 1

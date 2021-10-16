@@ -35,5 +35,10 @@ namespace Manager
             this.keyPressed = !this.keyPressed;
             CheckMatches();
         }
+
+        public void MoveToNextScene(string sceneName)
+        {
+            Utility.ChangeScene(sceneName);
+        }
     }
 }
