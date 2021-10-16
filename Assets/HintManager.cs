@@ -102,6 +102,7 @@ namespace Manager
         private void EnableHintHand()
         {
             this.hand.gameObject.SetActive(true);
+            this._handTransform.anchoredPosition = this.startPoint.anchoredPosition;
         }
 
         private void DisableHint()
