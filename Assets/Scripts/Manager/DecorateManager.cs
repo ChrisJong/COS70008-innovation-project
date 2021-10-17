@@ -76,6 +76,17 @@ namespace Manager
 
         public void MoveToNextScene(string sceneName)
         {
+            Debug.Log("SelectionManager.instance: " + SelectionManager.instance);
+            Debug.Log(SelectionManager.instance.NameWritingQueue.ToArray().ToString());
+            if (SelectionManager.instance != null)
+            {
+                Debug.Log(SelectionManager.instance.NameWritingQueue.ToArray().ToString());
+                if (SelectionManager.instance.NameWritingQueue.Count > 0)
+                {
+                    sceneName = SelectionManager.instance.NameWritingQueue.Dequeue();
+                    Debug.Log("Next scene name came from Queue: " + sceneName);
+                }
+            }
             Utility.ChangeScene(sceneName);
         }
 

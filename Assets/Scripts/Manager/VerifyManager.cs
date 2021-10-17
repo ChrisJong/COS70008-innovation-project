@@ -57,7 +57,19 @@ namespace Manager
             // When completed activity or there was an error with tesseract
             if (_completed || _error != "" || _attempted)
             {
-                Utility.ChangeScene("Selection");
+                string sceneName = "Selection";
+                Debug.Log("SelectionManager.instance: " + SelectionManager.instance);
+                Debug.Log(SelectionManager.instance.SceneQueue.ToArray().ToString());
+                if (SelectionManager.instance != null)
+                {
+                    Debug.Log(SelectionManager.instance.SceneQueue.ToArray().ToString());
+                    if (SelectionManager.instance.SceneQueue.Count > 0)
+                    {
+                        sceneName = SelectionManager.instance.SceneQueue.Dequeue();
+                        Debug.Log("Next scene name came from Queue: " + sceneName);
+                    }
+                }
+                Utility.ChangeScene(sceneName);
                 return;
             }
             _attempted = true; // have attempted this activity once
