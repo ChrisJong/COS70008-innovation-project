@@ -5955,11 +5955,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 328507251}
-  _handAnimator: {fileID: 0}
   _showingHints: 0
   _startHintAt: 5
-  _timer: 0
-  _currentClip: 
+  pointToPointMode: 0
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  _handSpeed: 300
 --- !u!4 &1395024063
 Transform:
   m_ObjectHideFlags: 0
@@ -6732,7 +6733,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: B_CompleteWord
+          m_StringArgument: B_Musiceli
           m_BoolArgument: 0
         m_CallState: 1
 --- !u!114 &2134314671
