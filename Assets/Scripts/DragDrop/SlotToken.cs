@@ -83,9 +83,6 @@ public class SlotToken : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDra
 
     public void MoveBack()
     {
-        if (!this.draggable)
-            return;
-
         this._rectTransform.anchoredPosition3D = this._previousPosition;
     }
 }

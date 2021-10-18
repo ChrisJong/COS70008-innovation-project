@@ -172,8 +172,9 @@ MonoBehaviour:
   - {fileID: 842526769}
   boardOutline: {fileID: 1438960925}
   boardCompleted: {fileID: 618029246}
-  slotCompleteAudioClip: {fileID: 8300000, guid: aecd64a23187641d19c20ed54df15080, type: 3}
+  slotCompleteAudioClip: {fileID: 8300000, guid: 27a08368672dc4805833470740ff87e6, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!1 &361537973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1667,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: V_Decorate
+          m_StringArgument: V_DraggingLetter
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1658768683

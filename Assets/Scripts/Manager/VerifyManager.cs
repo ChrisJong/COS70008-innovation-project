@@ -2,7 +2,7 @@ namespace Manager
 {
     using System;
     using System.Collections;
-
+    using TMPro;
     using UnityEngine;
     using UnityEngine.UI;
 
@@ -12,11 +12,12 @@ namespace Manager
     {
         [SerializeField] private string childName;
 
-        [SerializeField] private Text nameTextField;
+        [SerializeField] private TextMeshProUGUI nameTextField;
         [SerializeField] public Text detectedTextField;
         private TesseractDriver _tesseractDriver;
         private string _text = ""; // Detected text
         private string _error = "";
+        private bool _completed = false;
 
         public Camera ScreenshotCamera; // Camera which takes screenshot of layer 6
         public Camera MainCamera; // Main Camera needed because it toggle it when taking screenshot
@@ -24,7 +25,11 @@ namespace Manager
         public Texture2D HighlightedTexture;
         private RenderTexture RenderTexture;
 
+        [Space(10), Header("Audio")]
         public AudioClip SuccessAudioClip;
+
+        [Space(10), Header("Particles")]
+        public ParticleSystem successParticleSystem;
 
         private void Start()
         {
@@ -45,8 +50,14 @@ namespace Manager
             this.nameTextField.text = this.childName;
         }
 
-        public void VerifyName()
+        public void Check()
         {
+            // When completed activity or there was an error with tesseract
+            if (_completed || _error != "")
+            {
+                Utility.ChangeScene("Selection");
+                return;
+            }
             // Check the name over OCR
             takeScreenshotAndRecognise();
         }
@@ -80,17 +91,16 @@ namespace Manager
             Debug.Log("Childname: " + childName);
             Debug.Log("_text: " + _text);
 
-            if (childName.ToLower() == _text.ToLower())
+            if (childName.ToLower() == _text.ToLower() || _text.ToLower().Contains(childName.ToLower()))
             {
                 onActivityComplete();
 
             }
-
-            Utility.ChangeScene("Selection");
         }
 
         private void onActivityComplete()
         {
+            this._completed = true;
             if (SuccessAudioClip != null)
             {
                 Debug.Log("Playing sound effect using audio manager");
@@ -99,6 +109,16 @@ namespace Manager
                 else
                     Utility.PlayOneShot(this.SuccessAudioClip, 0.5f);
             }
+            if (successParticleSystem != null)
+            {
+                Debug.Log("Playing Particle System");
+                successParticleSystem.Play();
+            }
+        }
+
+        public void MoveToNextScene(string sceneName)
+        {
+            Utility.ChangeScene(sceneName);
         }
 
         private void takeScreenshotAndRecognise()

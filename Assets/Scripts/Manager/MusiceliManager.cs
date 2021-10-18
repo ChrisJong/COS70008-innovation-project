@@ -1,6 +1,11 @@
+namespace Manager
+{
     using System.Collections;
     using System.Collections.Generic;
+
     using UnityEngine;
+
+    using Utils;
 
     public class MusiceliManager : MonoBehaviour
     {
@@ -20,6 +25,10 @@
             }
         }
 
+        public void BackToSelection()
+        {
+            Utility.ChangeScene("selection");
+        }
 
         public void KeyPress()
         {
@@ -27,3 +36,4 @@
             CheckMatches();
         }
     }
+}

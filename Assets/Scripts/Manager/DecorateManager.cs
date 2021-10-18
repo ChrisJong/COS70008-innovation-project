@@ -11,7 +11,7 @@ namespace Manager
 
     public class DecorateManager : SingletonMono<DecorateManager>
     {
-        [Space(10), Header("Main Components")]
+        [Header("Main Components")]
         [SerializeField] private bool _completed = false;
 
         [SerializeField] private Image _letterImage;

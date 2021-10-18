@@ -419,7 +419,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1_DraggingNumber
+          m_StringArgument: 4_Decorate
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &708149469
@@ -1019,6 +1019,7 @@ MonoBehaviour:
   - {fileID: 1512491283}
   completedImage: {fileID: 21300000, guid: 829bdd734bb1f4ea881c623b0af841a6, type: 3}
   successAduioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
+  successParticleSystem: {fileID: 0}
 --- !u!1 &1512491279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1203,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 3_DraggingCount
+          m_StringArgument: 6_DraggingCount
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1513202197
@@ -1225,7 +1226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46ccd07bf9ea2694196fca2e0b6563e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b137f873aa522d54789ff53fbf2f3741, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -832,7 +832,7 @@ MonoBehaviour:
   _sequencePoints: []
   _letterOutlineSprite: {fileID: 21300000, guid: 13eba910d3f144eab836e259986f9170, type: 3}
   _letterCompleteSprite: {fileID: 21300000, guid: 941a8ce8374794d6fbb939cfb8a19ec3, type: 3}
-  startLetterAudioClip: {fileID: 8300000, guid: 10d5625749fd4420aba3e524f5556297, type: 3}
+  startLetterAudioClip: {fileID: 8300000, guid: 244a141dcfc7d49e08b90dcfa3976ec3, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
   successParticleSystem: {fileID: 0}
 --- !u!1 &1531499214

@@ -41,6 +41,12 @@ namespace Utils
             SceneManager.LoadScene(sceneName);
         }
 
+        public static string GetSceneLetterName()
+        {
+            string temp = SceneManager.GetActiveScene().name.Split(char.Parse("_"))[0];
+            return temp;
+        }
+
         public static void PlayOneShot(AudioClip audioClip)
         {
             if (audioClip != null)
