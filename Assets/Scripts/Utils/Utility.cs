@@ -62,5 +62,19 @@ namespace Utils
             else
                 Debug.LogError("No Audio Clip Found!");
         }
+
+        public static Texture2D ToTexture2D(this RenderTexture renderTexture)
+        {
+            Texture2D texture2D = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
+            RenderTexture oldRT = RenderTexture.active;
+            RenderTexture.active = renderTexture;
+
+            texture2D.ReadPixels(new Rect(0.0f, 0.0f, renderTexture.width, renderTexture.height), 0, 0);
+            texture2D.Apply();
+
+            RenderTexture.active = oldRT;
+
+            return texture2D;
+        }
     }
 }

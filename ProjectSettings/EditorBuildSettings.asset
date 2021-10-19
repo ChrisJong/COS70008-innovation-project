@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Selection.unity
     guid: 9633f73f403fbed439fea0233d34611c
   - enabled: 1
+    path: Assets/Scenes/FeedingTime.unity
+    guid: c784c5fdc03c8d1438c9cb8a4d025a36
+  - enabled: 1
     path: Assets/Scenes/Letters/A_Decorate.unity
     guid: a138ae609b5ebd748bb181dc8a49cc5f
   - enabled: 1
@@ -26,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Letters/D_DraggingLetter.unity
     guid: 735d3d26296626c4b956a203350f151e
-  - enabled: 1
-    path: Assets/Scenes/Letters/E_CompleteWord.unity
-    guid: 25651609fa49e4643ad96f0f5850a674
   - enabled: 1
     path: Assets/Scenes/Letters/F_Decorate.unity
     guid: 91077325ad5750143bc338dcff0bf107
@@ -59,9 +59,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Letters/O_DraggingLetter.unity
     guid: 0c847d0c98b9c4b05ad4f4c0669aec2e
-  - enabled: 1
-    path: Assets/Scenes/Letters/P_Musiceli.unity
-    guid: 34273030398de4871980528a8584613f
   - enabled: 1
     path: Assets/Scenes/Letters/Q_CompleteWord.unity
     guid: e7e2bc8fd87854d8f86f26456015d120

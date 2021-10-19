@@ -79,12 +79,18 @@ namespace Manager
 
         public void ClearLines()
         {
-            if (this._drawCollection.Count != 0)
+            if (this._drawCollection.Count == 0 && this._drawCollection != null)
+                return;
+
+            if (this._drawCollection == null)
             {
-                foreach(DrawingAttributes line in this._drawCollection)
-                {
-                    line.DestoryLine();
-                }
+                this._drawCollection = new List<DrawingAttributes>();
+                return;
+            }
+
+            foreach (DrawingAttributes line in this._drawCollection)
+            {
+                line.DestoryLine();
             }
 
             this._drawCollection.Clear();
@@ -114,7 +120,10 @@ namespace Manager
             if (hit.gameObject.tag == "DrawingBoard" || hit.gameObject.tag == "SequencePoint")
             {
                 if (this._currentLine == null)
+                {
                     this._currentLine = (GameObject)Instantiate(this._drawingPrefab);
+                    this._currentLine.transform.parent = this.transform;
+                }
 
                 this._currentLineAttributes = this._currentLine.GetComponent<DrawingAttributes>();
                 this._currentLineAttributes.AddPoint(this._mousePosCurrent);
