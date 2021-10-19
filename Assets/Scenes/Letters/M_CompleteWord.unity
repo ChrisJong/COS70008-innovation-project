@@ -173,8 +173,8 @@ MonoBehaviour:
   - {fileID: 842526769}
   outlineSprite: {fileID: 21300000, guid: f33b850959f2b5f47866b911a9e9b488, type: 3}
   completeSprite: {fileID: 21300000, guid: c382d20bd774bdf41bc1022470b5e26f, type: 3}
-  slotCompleteAudioClip: {fileID: 8300000, guid: 8e2494641d7614eaaaed882728c3bed0, type: 3}
-  SuccessAudioClip: {fileID: 8300000, guid: 52f500cb9befc44c2a7cc2e5e147ed17, type: 3}
+  slotCompleteAudioClip: {fileID: 8300000, guid: 52f500cb9befc44c2a7cc2e5e147ed17, type: 3}
+  SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
   successParticleSystem: {fileID: 0}
 --- !u!1 &361537973
 GameObject:
