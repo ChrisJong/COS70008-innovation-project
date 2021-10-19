@@ -36,7 +36,7 @@ namespace Manager
         [SerializeField] private float _startingTime = 60.0f;
         private float _timer = 0.0f;
 
-        [SerializeField] private int _correctAnswers = 0;
+        private int _correctAnswers = 0;
         private int _amountOfFruit = 0;
 
         private string _currentAnswer = "";
@@ -65,7 +65,6 @@ namespace Manager
 
         [Space(10), Header("Screenshot")]
         [SerializeField] private Camera _screenshotCamera;
-        [SerializeField] private RectTransform _outline;
         [SerializeField] private RenderTexture _renderTexture;
         [SerializeField] private Texture2D _screenshotTexture;
         private TesseractDriver _tesseractDriver;
