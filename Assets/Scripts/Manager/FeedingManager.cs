@@ -55,6 +55,7 @@ namespace Manager
 
         [SerializeField] private TextMeshProUGUI _currentTextText;
         [SerializeField] private TextMeshProUGUI _currentTimerText;
+        [SerializeField] private TextMeshProUGUI _currentCountText;
         [SerializeField] private TextMeshProUGUI _completedAnswersText;
 
         [SerializeField] private List<Sprite> _animalSprites;
@@ -120,6 +121,8 @@ namespace Manager
             this._timer = this._startingTime;
 
             this._correctAnswers = 0;
+
+            this._currentCountText.text = this._correctAnswers.ToString();
 
             this._completedPanel.gameObject.SetActive(false);
             this._checkButton.gameObject.SetActive(true);
@@ -225,6 +228,7 @@ namespace Manager
             {
                 Debug.Log("Correct");
                 this._correctAnswers++;
+                this._currentCountText.text = this._correctAnswers.ToString();
             }
 
         }
