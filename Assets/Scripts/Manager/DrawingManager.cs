@@ -38,7 +38,10 @@ namespace Manager
         private void Update()
         {
             if (!this._canDraw)
+            {
+                this.EndDrawing();
                 return;
+            }
 
             this._mousePosCurrent = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             this._mousePosCurrent.z = -5.0f;
@@ -60,6 +63,9 @@ namespace Manager
                     float dist = Mathf.Abs(Vector3.Distance(this._mousePosCurrent, this._mousePosPrevious));
                     if (dist >= 0.1f)
                         this.HandleDrawing(hit.collider);
+
+                    if (!this._canDraw)
+                        this.EndDrawing();
                 }
                 else if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) || Input.GetMouseButtonUp(0))
                 {
@@ -79,6 +85,9 @@ namespace Manager
 
         public void ClearLines()
         {
+            if (this._currentLine != null)
+                this.EndDrawing();
+
             if (this._drawCollection.Count == 0 && this._drawCollection != null)
                 return;
 
