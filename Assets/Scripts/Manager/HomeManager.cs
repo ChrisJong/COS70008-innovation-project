@@ -21,5 +21,9 @@ namespace Manager
             Utility.ChangeScene("Verify");
         }
 
+        private void Start()
+        {
+            AudioManager.instance.PlayMusic();
+        }
     }
 }

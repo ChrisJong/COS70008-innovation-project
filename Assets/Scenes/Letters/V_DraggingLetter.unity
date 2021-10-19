@@ -254,9 +254,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   myLetter: D
-  tokenAudioClip: {fileID: 8300000, guid: 76a999c3b414b47a2a9626a4e8ab401a, type: 3}
+  tokenAudioClip: {fileID: 8300000, guid: edb3129fe1e53a849a6bfc00ceed8d1e, type: 3}
 --- !u!225 &664453342
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   myLetter: V
-  tokenAudioClip: {fileID: 8300000, guid: 6c52979e85d8e465d98f124ed4b1a780, type: 3}
+  tokenAudioClip: {fileID: 8300000, guid: 7c86f77a2012c43afab8eb1b5b9aaa13, type: 3}
 --- !u!225 &1062314669
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   myLetter: W
-  tokenAudioClip: {fileID: 8300000, guid: 27a08368672dc4805833470740ff87e6, type: 3}
+  tokenAudioClip: {fileID: 8300000, guid: 01c996a1311df4cc99d3a7cfd898972b, type: 3}
 --- !u!225 &1703897779
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   myLetter: B
-  tokenAudioClip: {fileID: 8300000, guid: ccdd75b8084e1c84cabbc6d5a9d88f28, type: 3}
+  tokenAudioClip: {fileID: 8300000, guid: f5717487087a7ec4897ff5ddaea20d2d, type: 3}
 --- !u!225 &2014561580
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   myLetter: R
-  tokenAudioClip: {fileID: 8300000, guid: ed38b8f2ddfd64bb592c004e232aa424, type: 3}
+  tokenAudioClip: {fileID: 8300000, guid: 53756ee2946a2dd4a9b9e3887cfbf912, type: 3}
 --- !u!225 &2072498969
 CanvasGroup:
   m_ObjectHideFlags: 0
