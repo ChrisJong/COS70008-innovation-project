@@ -24,7 +24,7 @@ namespace Manager
         public bool pointToPointMode = false;
         public RectTransform startPoint;
         public RectTransform endPoint;
-        [SerializeField] private float _handSpeed = 300.0f;
+        private float _handSpeed = 500.0f;
 
         private Animator _handAnimator;
         private RectTransform _handTransform;
@@ -64,7 +64,8 @@ namespace Manager
         {
             if (this._timer >= this._startHintAt)
             {
-                this.EnableHintHand();
+                if(!this._showingHints)
+                    this.EnableHintHand();
 
                 if(Vector2.Distance(this._handTransform.anchoredPosition, this.endPoint.anchoredPosition) <= 0.25f)
                     this._handTransform.anchoredPosition = this.startPoint.anchoredPosition;
@@ -101,6 +102,7 @@ namespace Manager
 
         private void EnableHintHand()
         {
+            this._showingHints = true;
             this.hand.gameObject.SetActive(true);
             this._handTransform.anchoredPosition = this.startPoint.anchoredPosition;
         }
