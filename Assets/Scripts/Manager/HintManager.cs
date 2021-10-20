@@ -52,7 +52,7 @@ namespace Manager
             if (!this.isEnabled)
                 return;
 
-            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+            if (Input.touchCount > 0 || Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
             {
                 this._timer = 0.0f;
                 this._showingHints = false;

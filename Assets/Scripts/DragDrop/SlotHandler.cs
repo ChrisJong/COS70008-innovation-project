@@ -14,6 +14,8 @@ public class SlotHandler : MonoBehaviour, IDropHandler
 
 	public GameObject token = null;
 
+	public AudioClip wrongAudioClip;
+
 	public void OnDrop(PointerEventData eventData)
 	{
 		if (this.completed)
@@ -56,6 +58,10 @@ public class SlotHandler : MonoBehaviour, IDropHandler
             {
 				// move the draggable word out of the slot.
 				eventData.pointerDrag.GetComponent<SlotToken>().MoveBack();
+				if (AudioManager.instance != null && this.wrongAudioClip != null)
+					AudioManager.instance.PlaySoundEffect(this.wrongAudioClip);
+				else if(this.wrongAudioClip != null)
+					Utils.Utility.PlayOneShot(this.wrongAudioClip);
 			}
 		}
 	}
