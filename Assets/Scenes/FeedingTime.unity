@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9ea228bc7ed5b49890adab47a8e310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingTime: 5
+  _startingTime: 60
   _currentAnswer: 
   _tesseractAnswer: 
   _checkButton: {fileID: 1407339846}
