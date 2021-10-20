@@ -2960,7 +2960,7 @@ MonoBehaviour:
   E_Note: {fileID: 8300000, guid: 166443cb6199a0a408116be7ed363828, type: 3}
   F_Note: {fileID: 8300000, guid: 956c724d040dee9409ccef3f53af7689, type: 3}
   G_Note: {fileID: 8300000, guid: d76cc7d7995e3c24a8344526d127622b, type: 3}
-  A_Note: {fileID: 8300000, guid: e8b109b62280c28439c1385c72080299, type: 3}
+  A_Note: {fileID: 8300000, guid: a7c9c096e3fdc7646afec9889aa124a0, type: 3}
   B_Note: {fileID: 8300000, guid: 4dc4a98a0f6b6444e89c9706f1faedeb, type: 3}
   aSource: {fileID: 2045302322}
   C_Note_Hold: {fileID: 8300000, guid: 500bb61c20757194ebe3eaac71b27e1f, type: 3}
