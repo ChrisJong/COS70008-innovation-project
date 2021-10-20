@@ -17,8 +17,10 @@ namespace Manager
         public enum Fruit
         {
             APPLE = 1,
-            ORANGE = 2,
-            PEAR = 3
+            BANANA = 2,
+            CARROT = 3,
+            MANGO = 4,
+            PEAR = 5
         };
 
         public enum Animal
@@ -39,8 +41,8 @@ namespace Manager
         private int _correctAnswers = 0;
         private int _amountOfFruit = 0;
 
-        private string _currentAnswer = "";
-        private string _tesseractAnswer = "";
+        [SerializeField] private string _currentAnswer = "";
+        [SerializeField] private string _tesseractAnswer = "";
 
         private Animal _currentAnimal = Animal.CHICKEN;
         private Fruit _currentFruit = Fruit.APPLE;
@@ -53,11 +55,13 @@ namespace Manager
 
         [SerializeField] private Image _animalImage;
 
-        [SerializeField] private TextMeshProUGUI _currentTextText;
+        [SerializeField] private TextMeshProUGUI _currentWritingNumberText;
+        [SerializeField] private TextMeshProUGUI _currentWritingLetterrText;
+        [SerializeField] private TextMeshProUGUI _currentDisplayText;
         [SerializeField] private TextMeshProUGUI _currentTimerText;
         [SerializeField] private TextMeshProUGUI _currentCountText;
         [SerializeField] private TextMeshProUGUI _completedAnswersText;
-
+        
         [SerializeField] private List<Sprite> _animalSprites;
         [SerializeField] private List<Sprite> _fruitSprites;
 
@@ -67,6 +71,7 @@ namespace Manager
         [SerializeField] private Camera _screenshotCamera;
         [SerializeField] private RenderTexture _renderTexture;
         [SerializeField] private Texture2D _screenshotTexture;
+        [SerializeField] private TextMeshProUGUI _screenshotDisplayText;
         private TesseractDriver _tesseractDriver;
 
         public override void Awake()
@@ -115,10 +120,8 @@ namespace Manager
             if (DrawingManager.instance != null)
                 DrawingManager.instance.CanDraw = true;
 
-            this._completed = false;
-
             this._timer = this._startingTime;
-
+            
             this._correctAnswers = 0;
 
             this._currentCountText.text = this._correctAnswers.ToString();
@@ -128,6 +131,9 @@ namespace Manager
 
             this.ClearAnswer();
             this.ChangeAnswer();
+
+            this._completed = false;
+            this._showEnd = false;
         }
 
         public void CheckAnswer()
@@ -144,12 +150,13 @@ namespace Manager
 
         private void ChangeAnswer()
         {
-            this._amountOfFruit = Random.Range(1, 3);
+            this._amountOfFruit = Random.Range(1, 4);
+            if (this._amountOfFruit == 4) this._amountOfFruit = 3;
             int temp = Random.Range(1, 6);
             if (temp == 6) temp = 5;
             this._currentAnimal = (Animal)temp;
-            temp = Random.Range(1, 4);
-            if (temp == 4) temp = 3;
+            temp = Random.Range(1, 6);
+            if (temp == 6) temp = 5;
             this._currentFruit = (Fruit)temp;
 
             if (this._currentFruitGroup != null)
@@ -158,11 +165,23 @@ namespace Manager
             this._currentFruitGroup = this._fruitGroup[this._amountOfFruit - 1];
             this._currentFruitGroup.SetActive(true);
 
-            this._currentAnswer = this._amountOfFruit.ToString() + ((this._amountOfFruit <= 1) ? this._currentFruit.ToString() : this._currentFruit.ToString()+"S");
-            this._currentTextText.text = this._amountOfFruit.ToString() + " " + ((this._amountOfFruit <= 1) ? this._currentFruit.ToString() : this._currentFruit.ToString() + "S");
+            string letter = this._currentFruit.ToString().Substring(0, 1);
+            string rest = this._currentFruit.ToString().Substring(1);
+
+            this._currentAnswer = this._amountOfFruit.ToString() + ((this._amountOfFruit <= 1) ? this._currentFruit.ToString() : this._currentFruit.ToString() + "S");
+            this._currentWritingNumberText.text = this._amountOfFruit.ToString();
+            this._currentWritingLetterrText.text = letter;
+            this._currentDisplayText.text = ((this._amountOfFruit <= 1) ? rest : rest + "S");
+            this._screenshotDisplayText.text = this._currentDisplayText.text;
 
             this.ChangeSprites();
             this.ClearAnswer();
+
+            if (HintManager.instance != null)
+            {
+                HintManager.instance.PassCustomAnimation((this._amountOfFruit.ToString() + letter));
+                HintManager.instance.isEnabled = true;
+            }
         }
 
         private void ChangeSprites()
@@ -185,11 +204,16 @@ namespace Manager
             if (DrawingManager.instance != null)
                 DrawingManager.instance.CanDraw = false;
 
+            if (HintManager.instance != null)
+            {
+                HintManager.instance.isEnabled = false;
+                HintManager.instance.DisableHint();
+            }
+
             this._showEnd = true;
 
-            this._currentTextText.text = string.Empty;
+            this._currentWritingNumberText.text = string.Empty;
             this._completedAnswersText.text = this._correctAnswers.ToString();
-
 
             this._completedPanel.gameObject.SetActive(true);
             this._checkButton.gameObject.SetActive(false);
