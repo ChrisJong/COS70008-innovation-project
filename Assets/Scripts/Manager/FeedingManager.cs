@@ -176,6 +176,12 @@ namespace Manager
 
             this.ChangeSprites();
             this.ClearAnswer();
+
+            if (HintManager.instance != null)
+            {
+                HintManager.instance.PassCustomAnimation((this._amountOfFruit.ToString() + letter));
+                HintManager.instance.isEnabled = true;
+            }
         }
 
         private void ChangeSprites()
@@ -198,11 +204,16 @@ namespace Manager
             if (DrawingManager.instance != null)
                 DrawingManager.instance.CanDraw = false;
 
+            if (HintManager.instance != null)
+            {
+                HintManager.instance.isEnabled = false;
+                HintManager.instance.DisableHint();
+            }
+
             this._showEnd = true;
 
             this._currentWritingNumberText.text = string.Empty;
             this._completedAnswersText.text = this._correctAnswers.ToString();
-
 
             this._completedPanel.gameObject.SetActive(true);
             this._checkButton.gameObject.SetActive(false);
