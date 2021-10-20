@@ -727,7 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   myLetter: sheep
-  tokenAudioClip: {fileID: 0}
+  tokenAudioClip: {fileID: 8300000, guid: 3dfdd5347d507eb4bb68696c72ac9caf, type: 3}
 --- !u!225 &775523423
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggable: 1
   myLetter: cow
-  tokenAudioClip: {fileID: 0}
+  tokenAudioClip: {fileID: 8300000, guid: ad4c0914c70f4fb47a323cc80e88fef4, type: 3}
 --- !u!225 &1153178766
 CanvasGroup:
   m_ObjectHideFlags: 0
