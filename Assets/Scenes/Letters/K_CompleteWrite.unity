@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1445,7 +1445,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 15
+    maxNumParticles: 40
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -6008,7 +6008,7 @@ MonoBehaviour:
   startLetterAudioClip: {fileID: 8300000, guid: 0a8722a7e933d473f9c81598546861da, type: 3}
   writingCompleteAudioClip: {fileID: 8300000, guid: 40d495b70f9a04086ab5990d186e3f92, type: 3}
   SuccessAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
-  successParticleSystem: {fileID: 0}
+  successParticleSystem: {fileID: 813143713}
 --- !u!1 &1188047451
 GameObject:
   m_ObjectHideFlags: 0
