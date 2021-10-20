@@ -16,7 +16,7 @@ namespace Manager
         public bool isEnabled = true;
         [SerializeField] private bool _showingHints = false;
 
-        private float _startHintAt = 3.0f;
+        [SerializeField] private float _startHintAt = 3.0f;
         private float _timer = 0.0f;
 
         private string _currentClip;

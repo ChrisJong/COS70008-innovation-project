@@ -1820,6 +1820,10 @@ PrefabInstance:
       propertyPath: hand
       value: 
       objectReference: {fileID: 607030710}
+    - target: {fileID: 4489498598838611617, guid: 949009873dea94541826db9c7831147d, type: 3}
+      propertyPath: _startHintAt
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4489498598838611618, guid: 949009873dea94541826db9c7831147d, type: 3}
       propertyPath: m_Name
       value: HintManager
