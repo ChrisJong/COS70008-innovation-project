@@ -277,6 +277,9 @@ MonoBehaviour:
   - {fileID: 151850629}
   - {fileID: 1430440496}
   - {fileID: 1678533712}
+  _correctAudioClip: {fileID: 8300000, guid: 693027315336b614ea01840dc3775789, type: 3}
+  _wrongAudioClip: {fileID: 8300000, guid: 5c50702542de3495e8e7fa71b3db8ca6, type: 3}
+  _finishedAudioClip: {fileID: 8300000, guid: 807e2e1cc8ba547b9a673bc2ae94385b, type: 3}
   _screenshotCamera: {fileID: 446810714}
   _renderTexture: {fileID: 0}
   _screenshotTexture: {fileID: 0}
