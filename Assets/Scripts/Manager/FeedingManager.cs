@@ -41,8 +41,8 @@ namespace Manager
         private int _correctAnswers = 0;
         private int _amountOfFruit = 0;
 
-        [SerializeField] private string _currentAnswer = "";
-        [SerializeField] private string _tesseractAnswer = "";
+        private string _currentAnswer = "";
+        private string _tesseractAnswer = "";
 
         private Animal _currentAnimal = Animal.CHICKEN;
         private Fruit _currentFruit = Fruit.APPLE;
@@ -66,6 +66,11 @@ namespace Manager
         [SerializeField] private List<Sprite> _fruitSprites;
 
         [SerializeField] private List<GameObject> _fruitGroup;
+
+        [Space(10), Header("Audio")]
+        [SerializeField] private AudioClip _correctAudioClip;
+        [SerializeField] private AudioClip _wrongAudioClip;
+        [SerializeField] private AudioClip _finishedAudioClip;
 
         [Space(10), Header("Screenshot")]
         [SerializeField] private Camera _screenshotCamera;
@@ -210,6 +215,11 @@ namespace Manager
                 HintManager.instance.DisableHint();
             }
 
+            if (AudioManager.instance != null)
+                AudioManager.instance.PlaySoundEffect(this._finishedAudioClip);
+            else
+                Utility.PlayOneShot(this._finishedAudioClip);
+
             this._showEnd = true;
 
             this._currentWritingNumberText.text = string.Empty;
@@ -252,6 +262,18 @@ namespace Manager
                 Debug.Log("Correct");
                 this._correctAnswers++;
                 this._currentCountText.text = this._correctAnswers.ToString();
+
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlaySoundEffect(this._correctAudioClip);
+                else
+                    Utility.PlayOneShot(this._correctAudioClip);
+            } 
+            else
+            {
+                if (AudioManager.instance != null)
+                    AudioManager.instance.PlaySoundEffect(this._wrongAudioClip);
+                else
+                    Utility.PlayOneShot(this._wrongAudioClip);
             }
 
         }
