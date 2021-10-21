@@ -2,3 +2,9 @@
 ## Project Name: <bold>Learning Pen</bold> (Unity3D version: 2021.1.19f1)
 
 Developed For Android On Tablet Devices Using Instruction Set ARMv7 & ARM64 - [Link To APK Releases](https://github.com/jordan-the/COS70008-innovation-project/releases).
+
+Group Members:
+Jordan The - [103301227@student.swin.edu.au](103301227@student.swin.edu.au)
+Monty Panday - [10335902@student.swin.edu.au](10335902@student.swin.edu.au)
+Junghwan Ko - [102844666@student.swin.edu.au](102844666@student.swin.edu.au)
+Christian Jong - [6806430@student.swin.edu.au](6806430@student.swin.edu.au)
